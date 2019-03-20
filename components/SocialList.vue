@@ -9,11 +9,11 @@
 </template>
 
 <script>
-import TwitterIcon from '@/components/icons/twitter-icon/twitter_icon_white.svg';
-import FacebookIcon from '@/components/icons/facebook-icon/facebook_icon_white.svg';
-import CbIcon from '@/components/icons/cb-icon/cb_icon_white.svg';
-import InstagramIcon from '@/components/icons/Instagram-icon/instagram_icon_white.svg';
-import MediumIcon from '@/components/icons/Medium-icon/medium_icon_white.svg';
+import TwitterIcon from '@/components/icons/twitter-icon/twitter_icon_white.svg?inline';
+import FacebookIcon from '@/components/icons/facebook-icon/facebook_icon_white.svg?inline';
+import CbIcon from '@/components/icons/cb-icon/cb_icon_white.svg?inline';
+import InstagramIcon from '@/components/icons/Instagram-icon/instagram_icon_white.svg?inline';
+import MediumIcon from '@/components/icons/Medium-icon/medium_icon_white.svg?inline';
 export default {
     components:{
     TwitterIcon,

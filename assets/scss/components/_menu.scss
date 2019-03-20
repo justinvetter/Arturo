@@ -223,6 +223,10 @@
         transition: top .4s;
         flex-direction: column;
 
+        &.hide{
+            left: 0;
+        }
+
         .mobile-social {
             display: flex;
             justify-content: center;

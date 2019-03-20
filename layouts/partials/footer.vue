@@ -37,8 +37,8 @@
 </template>
 
 <script>
-import MediumIcon from '@/components/icons/Medium-icon/medium_icon_white.svg';
-import ArturoLogo from '@/components/icons/Arturo-vertical-logo/arturo_vertical_logo_white.svg';
+import MediumIcon from '@/components/icons/Medium-icon/medium_icon_white.svg?inline';
+import ArturoLogo from '@/components/icons/Arturo-vertical-logo/arturo_vertical_logo_white.svg?inline';
 import SocialList from '@/components/SocialList';
 import { TweenMax, Elastic } from 'gsap';
 

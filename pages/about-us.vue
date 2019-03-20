@@ -12,7 +12,7 @@
       </article>
     </section>
     <section class="cards cards__right fullHeight">
-      <div class="image" style=""></div>
+      <div class="image" style></div>
       <article class="card card__dkBlue">
         <div>
           <h5 class="card__title vertText h__white">About Us</h5>
@@ -30,7 +30,7 @@
       <div class="leaders">
         <div class="leader">
           <div class="image">
-            <img src="~assets/images/img_jc.png">
+            <img src="~assets/images/img_jc.png" class="hidden">
           </div>
           <div class="leader__info h__white t__white">
             <h3>John-Isaac Clark</h3>
@@ -43,7 +43,7 @@
 
         <div class="leader">
           <div class="image">
-            <img src="~assets//images/img_bt.jpg">
+            <img src="~assets//images/img_bt.jpg" class="hidden">
           </div>
           <div class="leader__info h__white t__white">
             <h3>Dr. Ben Tuttle</h3>
@@ -58,7 +58,7 @@
       <div class="people">
         <div class="person">
           <div class="image">
-            <img src="~assets//images/advisor_01.jpg">
+            <img src="~assets//images/advisor_01.jpg" class="hidden">
           </div>
           <div class="person__info h__white t__white">
             <h3>Rob Painter</h3>
@@ -70,7 +70,7 @@
         </div>
         <div class="person">
           <div class="image">
-            <img src="~assets//images/advisor_02.jpg">
+            <img src="~assets//images/advisor_02.jpg" class="hidden">
           </div>
           <div class="person__info h__white t__white">
             <h3>Dr. Andy Hock</h3>
@@ -82,7 +82,7 @@
         </div>
         <div class="person">
           <div class="image">
-            <img src="~assets//images/advisor_03.jpg">
+            <img src="~assets//images/advisor_03.jpg" class="hidden">
           </div>
           <div class="person__info h__white t__white">
             <h3>Dr. Drew Conway</h3>
@@ -94,7 +94,7 @@
         </div>
         <div class="person">
           <div class="image">
-            <img src="~assets//images/advisor_04.jpg">
+            <img src="~assets//images/advisor_04.jpg" class="hidden">
           </div>
           <div class="person__info h__white t__white">
             <h3>Dr. Marty Buchheim</h3>
@@ -125,25 +125,86 @@
         </div>
       </article>
     </section>
+    <Footer/>
   </div>
 </template>
 
 <script>
+
+import Footer from '@/layouts/partials/footer';
 export default {
-  //scrollToTop: true
+    components:{
+        Footer
+    },
+    head(){
+        return {
+            title: 'About Us | Arturo',
+            meta: [
+                { hid: 'description', name: 'description', content: 'About Us' }
+            ]
+        }
+    },
+  mounted() {
+    var animateHTML = function() {
+      var elems;
+      var windowHeight;
+      function init() {
+        elems = document.querySelectorAll(".hidden");
+        windowHeight = window.innerHeight;
+        addEventHandlers();
+        checkPosition();
+      }
+      function addEventHandlers() {
+        window.addEventListener("scroll", checkPosition);
+        window.addEventListener("resize", init);
+      }
+      function checkPosition() {
+        for (var i = 0; i < elems.length; i++) {
+          var positionFromTop = elems[i].getBoundingClientRect().top;
+          if (positionFromTop - windowHeight <= 0) {
+            elems[i].className = elems[i].className.replace(
+              "hidden",
+              "fade-in-element"
+            );
+          }
+        }
+      }
+      return {
+        init: init
+      };
+    };
+    animateHTML().init();
+  }
 };
 </script>
 
 <style lang="scss" scoped>
-    .squish-image{
-        background-image: url('~assets/images/img_hero_aboutus_v2.png')
-    }
-    .cards{
-        .image{
-            background-image: url('~assets/images/img_hero_aboutus.png');
-            background-size: contain;
-            background-repeat: no-repeat;
-        }
-    }
+.squish-image {
+  background-image: url("~assets/images/img_hero_aboutus_v2.png");
+}
+.cards {
+  .image {
+    background-image: url("~assets/images/img_hero_aboutus.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.fade-in-element {
+  animation: fade-in 0.75s;
+}
+
+.hidden {
+  opacity: 0;
+  transition: all 0.75s ease;
+}
 </style>
 

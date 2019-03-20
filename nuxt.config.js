@@ -42,12 +42,12 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
-    '@nuxtjs/style-resources'
+    '@nuxtjs/style-resources',
+    'nuxt-svg'
   ],
 
   styleResources: {
     scss: [
-      'normalize-scss/sass/normalize/_import-now.scss',
       'assets/scss/_variables.scss',
     ]
   },
@@ -59,14 +59,7 @@ export default {
     ** You can extend webpack config here
     */
     extend(config, ctx) {
-      const svgRule = config.module.rules.find(rule => rule.test.test('.svg'));
 
-      svgRule.test = /\.(png|jpe?g|gif|webp)$/;
-
-      config.module.rules.push({
-        test: /\.svg$/,
-        loader: 'vue-svg-loader',
-      });
     }
   }
 }

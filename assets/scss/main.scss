@@ -1,4 +1,4 @@
-
+@import '@/node_modules/normalize-scss/sass/normalize/_import-now.scss';
 @import 'mixins/fluidType';
 @import 'helpers/bgColors.scss';
 @import 'helpers/emCalc.scss';
@@ -17,6 +17,7 @@
 @import 'sections/bgImage.scss';
 @import 'sections/cards.scss';
 @import 'sections/footer.scss';
+@import 'sections/counting.scss';
 @import 'sections/hero.scss';
 @import 'sections/leadership.scss';
 @import 'sections/logos.scss';

@@ -31,7 +31,7 @@
 
 <script>
 
-import ArturoMark from '@/components/icons/arturo_white_mark.svg';
+import ArturoMark from '@/components/icons/arturo_white_mark.svg?inline';
 import SocialList from '@/components/SocialList';
 
 export default {
@@ -63,6 +63,16 @@ export default {
         menu.classList.toggle("is-open");
       });
     });
+
+    window.onscroll = function(ev) {
+      var menu = document.getElementById('slideout-menu');
+    if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight - 200) {
+
+        menu.classList.add('hide')
+    } else {
+        menu.classList.remove('hide')
+    }
+};
   }
 };
 </script>

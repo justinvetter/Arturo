@@ -1,0 +1,43 @@
+@import '@/node_modules/normalize-scss/sass/normalize/_import-now.scss';
+@import 'mixins/fluidType';
+@import 'helpers/bgColors.scss';
+@import 'helpers/emCalc.scss';
+@import 'helpers/helperClasses.scss';
+@import 'helpers/placeholder.scss';
+@import 'helpers/txtColors.scss';
+@import 'helpers/vertText.scss';
+@import 'fonts';
+
+@import 'typography/aTags.scss';
+@import 'typography/hTags.scss';
+@import 'typography/pTags.scss';
+@import 'components/buttons.scss';
+@import 'components/menu.scss';
+@import 'components/revealText.scss';
+@import 'sections/bgImage.scss';
+@import 'sections/cards.scss';
+@import 'sections/footer.scss';
+@import 'sections/counting.scss';
+@import 'sections/hero.scss';
+@import 'sections/leadership.scss';
+@import 'sections/logos.scss';
+@import 'sections/process.scss';
+
+
+html{
+    font-family: $fontFamily;
+    font-weight: 100;
+    overflow-x: hidden;
+}
+
+
+section{
+    background-color: $color_white;
+}
+
+.page-enter-active, .page-leave-active {
+    transition: opacity .5s;
+  }
+  .page-enter, .page-leave-to {
+    opacity: 0;
+  }

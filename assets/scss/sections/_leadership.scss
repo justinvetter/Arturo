@@ -1,0 +1,202 @@
+.leadership {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 8rem;
+
+    &__title {
+        padding: 3rem 2rem 5rem 2rem;
+        position: absolute;
+        top: -8rem;
+        left: 10rem;
+        &:after{
+            content: "";
+            position: absolute;
+            width: 2px;
+            background-color: $color_darkBlue;
+            height: 130%;
+            top: 0;
+            right: 0;
+
+        }
+    }
+
+    .people {
+        width: 70%;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+
+        .person {
+
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 4rem;
+
+            &:first-of-type {
+                position: relative;
+
+                &:before {
+                    content: "Advisors";
+                    position: absolute;
+                    top: em(-20px);
+                    left: 4rem;
+                    color: $color_darkBlue;
+                    font-weight: bold;
+                    font-size: em(40px);
+                }
+            }
+
+            .image {
+                margin: 0 4rem 0 4rem;
+                box-sizing: border-box;
+                max-height: 480px;
+                overflow: hidden;
+
+                img {
+                    max-width: 100%;
+                }
+
+            }
+
+            &__info {
+                background-color: $color_darkBlue;
+                margin-top: -4rem;
+                z-index: 10;
+                padding: 3rem 4rem;
+                width: 60%;
+
+                h3 {
+                    font-size: em(40px);
+                    font-weight: 100;
+
+                }
+
+                p {
+                    font-weight: bold;
+                }
+
+
+            }
+        }
+
+        @media(max-width: 1300px){
+            flex-direction: column;
+            align-items: center;
+            .person{
+                width: 75%;
+            }
+        }
+
+        @media(max-width: 860px){
+            width: 100%;
+            .person{
+                .image{
+                    margin: 0;
+                }
+                .person__info{
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+
+    .leaders {
+        width: 70%;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        .leader {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 4rem;
+
+            &:first-of-type {
+                position: relative;
+
+                &:before {
+                    content: "Leadership";
+                    position: absolute;
+                    top: em(-20px);
+                    left: 4rem;
+                    color: $color_darkBlue;
+                    font-weight: bold;
+                    font-size: em(40px);
+                }
+            }
+
+            .image {
+                margin: 0 4rem 0 4rem;
+                box-sizing: border-box;
+                max-height: 480px;
+                overflow: hidden;
+
+                img {
+                    max-width: 100%;
+                    max-height: 480px;
+                }
+
+            }
+
+            &__info {
+                background-color: $color_blue;
+                margin-top: -4rem;
+                z-index: 10;
+                padding: 3rem 4rem 0 4rem;
+                width: 60%;
+
+                h3 {
+                    font-size: em(40px);
+                    font-weight: 100;
+
+                }
+
+                p {
+                    font-weight: bold;
+                }
+
+                .button {
+                    border-color: $color_teal;
+                    color: $color_teal;
+                    font-weight: bold;
+
+                    &:hover {
+                        background-color: $color_teal;
+                        color: $color_darkBlue;
+                    }
+                }
+            }
+            &__bio{
+
+                padding: 3rem 4rem 4rem 4rem;
+                width: 60%;
+            }
+        }
+
+        @media(max-width: 1300px){
+            flex-direction: column;
+            align-items: center;
+            .leader{
+                width: 75%;
+            }
+        }
+
+        @media(max-width: 860px){
+            width: 100%;
+            .leader{
+                .image{
+                    margin: 0;
+                }
+                .leader__info{
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+}

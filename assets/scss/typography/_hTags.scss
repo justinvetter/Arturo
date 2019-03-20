@@ -1,0 +1,34 @@
+h1, h2, h3, h4, h5, h6{
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+    //font-size: em(56px);
+    @include fluid-type($fonts__min-view-size, $fonts__max-view-size, 21px, 56px);
+    font-weight: 100;
+    line-height: 1.1;
+}
+
+h3{
+    font-weight: bold;
+    @include fluid-type($fonts__min-view-size, $fonts__max-view-size, 30px, 56px);
+    line-height: 1.1;
+    margin-bottom: 2rem;
+}
+
+h4{
+    @include fluid-type($fonts__min-view-size, $fonts__max-view-size, 18px, 40px);
+    font-weight: bold;
+    line-height: 1.1;
+    span{
+        font-weight: 100;
+    }
+}
+
+h5{
+    @include fluid-type($fonts__min-view-size, $fonts__max-view-size, 18px, 24px);
+    font-weight: bold;
+    line-height: 1.1;
+    padding-bottom: 2rem;
+}

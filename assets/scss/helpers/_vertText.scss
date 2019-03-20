@@ -1,0 +1,7 @@
+.vertText {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    text-transform: uppercase;
+    font-weight: 200;
+    @include fluid-type($fonts__min-view-size, $fonts__max-view-size, 18px, 24px);
+}

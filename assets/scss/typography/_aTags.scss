@@ -1,0 +1,9 @@
+a{
+    text-decoration: none;
+    color: inherit;
+    &.dkBlue{
+        color: $color_darkBlue;
+        text-decoration: underline;
+    }
+}
+

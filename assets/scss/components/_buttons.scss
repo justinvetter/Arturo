@@ -1,0 +1,124 @@
+.button {
+    border: 2px solid $color_darkBlue;
+    color: $color_darkBlue;
+    font-family: inherit;
+    font-size: em(20px);
+    background: none;
+    cursor: pointer;
+    padding: .75rem 1.5rem;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+    outline: none;
+    position: relative;
+    transition: all 0.3s;
+    overflow: hidden;
+    z-index: 10;
+
+    &:after {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        transition: all 0.3s;
+        width: 101%;
+        height: 0;
+        top: 50%;
+        left: 50%;
+        background: $color_darkBlue;
+        opacity: 0;
+        transform: translateX(-50%) translateY(-50%);
+    }
+
+    &:hover {
+        color: $color_teal;
+
+        &:after {
+            height: 75%;
+            opacity: 1;
+        }
+    }
+
+    &:active {
+        color: $color_teal;
+
+        &:after {
+            height: 130%;
+            opacity: 1;
+        }
+    }
+
+    &__white {
+        border: 2px solid $color_white;
+        color: $color_white;
+
+        &:after {
+            background: $color_white;
+        }
+
+        &:hover {
+            color: $color_blue;
+        }
+
+        &:active {
+            color: $color_blue;
+        }
+
+        &-blue {
+            &:hover {
+                color: $color_blue;
+            }
+
+            &:active {
+                color: $color_blue;
+            }
+        }
+
+        &-ltBlue {
+            &:hover {
+                color: $color_lightBlue;
+            }
+
+            &:active {
+                color: $color_lightBlue;
+            }
+        }
+
+        &-red {
+            &:hover {
+                color: $color_red;
+            }
+
+            &:active {
+                color: $color_red;
+            }
+        }
+
+        &-yellow {
+            &:hover {
+                color: $color_yellow;
+            }
+
+            &:active {
+                color: $color_yellow;
+            }
+        }
+    }
+
+    &__teal{
+        border: 2px solid $color_teal;
+        color: $color_teal;
+
+        &:after {
+            background: $color_teal;
+        }
+
+        &:hover {
+            color: $color_darkBlue;
+        }
+
+        &:active {
+            color: $color_darkBlue;
+        }
+    }
+}

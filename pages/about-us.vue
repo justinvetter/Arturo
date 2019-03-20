@@ -161,7 +161,7 @@ export default {
       function checkPosition() {
         for (var i = 0; i < elems.length; i++) {
           var positionFromTop = elems[i].getBoundingClientRect().top;
-          if (positionFromTop - windowHeight <= 0) {
+          if (positionFromTop - windowHeight <= -200) {
             elems[i].className = elems[i].className.replace(
               "hidden",
               "fade-in-element"

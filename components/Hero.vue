@@ -1,3 +1,20 @@
+<template>
+  <section class="hero">
+    <div class="hero__content">
+      <img src="~assets/images/arturo_white_logo.svg">
+      <div class="h__white subhead">
+        <h1>Enables understanding of the physical world</h1>
+      </div>
+    </div>
+  </section>
+</template>
+
+<script>
+export default {};
+</script>
+
+<style lang="scss" scoped>
+
 .hero {
     background-image: url('~assets/images/img_home_hero.jpg');
     background-size: cover;
@@ -21,7 +38,7 @@
             margin-bottom: 3em;
         }
 
-        &>div {
+        .subhead {
             max-width: em(648);
         }
     }
@@ -58,3 +75,6 @@
         }
     }
 }
+
+</style>
+

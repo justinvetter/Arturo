@@ -1,17 +1,9 @@
 <template>
   <div>
-    <section class="hero">
-      <div class="hero__content">
-        <img src="~assets/images/arturo_white_logo.svg">
-        <div class="h__white">
-          <h1>Enables understanding of the physical world</h1>
-        </div>
-      </div>
-    </section>
-    <section class="counting">
-      <h4>AI Insights delivered & counting</h4>
-      <h2 id="countUp">1234</h2>
-    </section>
+    <Hero />
+
+    <Counting number="1234" />
+
     <section id="bgImage1" class="bgImage fullHeight">
       <div class="background"></div>
       <article class="blue">
@@ -77,7 +69,7 @@
       </article>
     </section>
 
-    <Cards/>
+    <Cards />
 
     <section class="process fullHeight">
       <article class="process__card">
@@ -123,6 +115,8 @@ import HippoLogo from "@/components/icons/customer-logos/hippo_logo_white.svg?in
 import AmfamLogo from "@/components/icons/am_fam_logo_white.svg?inline";
 import Footer from '@/layouts/partials/footer';
 import Cards from '@/components/cards';
+import Hero from "@/components/Hero";
+import Counting from "@/components/Counting"
 export default {
   components: {
     KinLogo,
@@ -130,8 +124,11 @@ export default {
     HippoLogo,
     AmfamLogo,
     Footer,
-    Cards
+    Cards,
+    Hero,
+    Counting
   },
+
   mounted() {
 
     var animateHTML = function() {
@@ -165,33 +162,6 @@ export default {
     animateHTML().init();
 
 
-    function animateValue(id, start, end, duration) {
-      var obj = document.getElementById(id);
-      var range = end - start;
-      var minTimer = 50;
-      var stepTime = Math.abs(Math.floor(duration / range));
-
-      stepTime = Math.max(stepTime, minTimer);
-
-      var startTime = new Date().getTime();
-      var endTime = startTime + duration;
-      var timer;
-
-      function run() {
-        var now = new Date().getTime();
-        var remaining = Math.max((endTime - now) / duration, 0);
-        var value = Math.round(end - remaining * range);
-        obj.innerHTML = value;
-        if (value == end) {
-          clearInterval(timer);
-        }
-      }
-
-      timer = setInterval(run, stepTime);
-      run();
-    }
-
-    animateValue("countUp", 0, 1234, 3000);
 
     const bg2Background = this.$scrollmagic.scene({
       triggerElement: "#bgImage2 .background",

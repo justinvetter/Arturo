@@ -1,4 +1,47 @@
-.counting {
+<template>
+    <section class="counting">
+      <h4>AI Insights delivered & counting </h4>
+      <h2 id="countUp">1234</h2>
+    </section>
+</template>
+
+<script>
+export default {
+    mounted() {
+    function animateValue(id, start, end, duration) {
+      var obj = document.getElementById(id);
+      var range = end - start;
+      var minTimer = 50;
+      var stepTime = Math.abs(Math.floor(duration / range));
+
+      stepTime = Math.max(stepTime, minTimer);
+
+      var startTime = new Date().getTime();
+      var endTime = startTime + duration;
+      var timer;
+
+      function run() {
+        var now = new Date().getTime();
+        var remaining = Math.max((endTime - now) / duration, 0);
+        var value = Math.round(end - remaining * range);
+        obj.innerHTML = value;
+        if (value == end) {
+          clearInterval(timer);
+        }
+      }
+
+      timer = setInterval(run, stepTime);
+      run();
+    }
+
+    animateValue("countUp", 0, 1234, 3000);
+
+    }
+}
+</script>
+
+<style lang="scss" scoped>
+    .counting {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -47,3 +90,4 @@
         }
     }
 }
+</style>

@@ -45,7 +45,8 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 25vh;
+    height: 20vh;
+    padding-bottom: 5vh;
 
     h4 {
         color: $color_darkBlue;

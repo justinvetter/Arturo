@@ -49,7 +49,6 @@ export default {
   },
 
   mounted() {
-    document.addEventListener("DOMContentLoaded", function() {
       var menu, toggleButton, closeButton;
 
       // Set Elements
@@ -62,7 +61,7 @@ export default {
         e.preventDefault();
         menu.classList.toggle("is-open");
       });
-    });
+
 
     window.onscroll = function(ev) {
       var menu = document.getElementById('slideout-menu');

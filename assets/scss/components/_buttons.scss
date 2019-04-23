@@ -2,7 +2,7 @@
     border: 2px solid $color_darkBlue;
     color: $color_darkBlue;
     font-family: inherit;
-    font-size: em(20px);
+    font-size:20px;
     background: none;
     cursor: pointer;
     padding: .75rem 1.5rem;
@@ -120,5 +120,8 @@
         &:active {
             color: $color_darkBlue;
         }
+    }
+    &__spacer{
+        margin-top: 2rem;
     }
 }

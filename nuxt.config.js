@@ -53,6 +53,11 @@ export default {
   styleResources: {
     scss: [
       'assets/scss/_variables.scss',
+      'assets/scss/helpers/_emCalc.scss',
+      'assets/scss/helpers/_helperClasses.scss',
+      'assets/scss/helpers/_txtColors.scss',
+      'assets/scss/helpers/vertText.scss',
+      'assets/scss/mixins/_fluidType.scss.scss',
     ]
   },
   /*

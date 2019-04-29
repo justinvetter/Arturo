@@ -65,14 +65,16 @@ export default {
 
     window.onscroll = function(ev) {
       var menu = document.getElementById('slideout-menu');
-    if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight - 200) {
+    if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight - 300) {
 
         menu.classList.add('hide')
     } else {
         menu.classList.remove('hide')
     }
 };
-  }
+  },
+
+
 };
 </script>
 

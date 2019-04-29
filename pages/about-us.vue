@@ -107,9 +107,7 @@
     </section>
     <section class="bgImage about bgImage-about fullHeight">
       <div
-        class="background"
-        style="background-image: url('https://via.placeholder.com/857x453.jpg?text=FPO"
-      ></div>
+        class="background careers"></div>
       <article class="ltBlue">
         <div>
           <h5 class="bgImage__title vertText h__white">About Us</h5>
@@ -187,6 +185,13 @@ export default {
     background-size: contain;
     background-repeat: no-repeat;
   }
+}
+
+.careers{
+  background-image: url("~assets/images/img_aboutus_careers.jpg");
+  background-size: contain;
+  background-position: center left;
+  width: 35%;
 }
 
 @keyframes fade-in {

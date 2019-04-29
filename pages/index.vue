@@ -309,6 +309,17 @@ export default {
 
     this.$scrollmagic.addScene(bg3article.setClassToggle("#bgImage3 h4", "in"));
 
+    const scene3 = this.$scrollmagic.scene({
+            triggerElement: 'footer',
+            triggerHook: 1,
+            reverse: true,
+        })
+
+    this.$scrollmagic.addScene(
+        scene3
+        .setClassToggle(".scroll", 'hide')
+    )
+
 
 var scrollStop = function (callback) {
 
@@ -332,7 +343,7 @@ var scrollStop = function (callback) {
 
 			callback();
 
-		}, 2000);
+		}, 500);
 
 	}, false);
 

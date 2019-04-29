@@ -52,25 +52,16 @@ export default {
     mounted() {
         const scene = this.$scrollmagic.scene({
             triggerElement: 'footer',
-            triggerHook: 0,
+            triggerHook: .01,
             reverse: true,
         })
 
     this.$scrollmagic.addScene(
         scene
-        .setClassToggle("footer .footer__top", 'scroll')
+        .setClassToggle("footer .footer__top", 'scrollz')
 
     )
-    const scene3 = this.$scrollmagic.scene({
-            triggerElement: 'footer',
-            triggerHook: 1,
-            reverse: true,
-        })
 
-    this.$scrollmagic.addScene(
-        scene3
-        .setClassToggle(".scroll", 'hide')
-    )
 
     const scene2 = this.$scrollmagic.scene({
             triggerElement: 'footer',

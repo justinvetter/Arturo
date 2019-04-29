@@ -2,7 +2,7 @@
 <div>
     <a href="https://twitter.com/arturo_ai" target="_blank"><TwitterIcon /></a>
     <a href="#" target="_blank"><FacebookIcon /></a>
-    <a href="#" target="_blank"><CbIcon /></a>
+    <a href="https://www.crunchbase.com/organization/arturo-inc" target="_blank"><CbIcon /></a>
     <a href="https://www.instagram.com/arturo.ai/" target="_blank"><InstagramIcon /></a>
     <a href="#" target="_blank"><MediumIcon /></a>
 </div>

@@ -72,6 +72,7 @@ export default {
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        margin-top: 1rem;
 
         h4 {
             width: 100%;

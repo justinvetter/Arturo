@@ -27,6 +27,11 @@ html{
     font-weight: 100;
     overflow-x: hidden;
 }
+body{
+  width: 100%;
+  overflow-y: hidden;
+  box-sizing: content-box;
+}
 
 
 section{

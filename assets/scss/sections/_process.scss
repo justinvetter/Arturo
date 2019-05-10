@@ -83,11 +83,14 @@
   @media (max-width: 1200px) {
     .process__card {
       width: 100%;
+      max-width:100%;
+      padding: 0;
     }
 
     .process__content {
       flex-direction: column;
       align-items: center;
+      padding: 0;
 
       .process__item {
         width: 85%;

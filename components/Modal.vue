@@ -103,8 +103,8 @@ export default {
 
 <style lang="scss">
 .v--modal {
-  background-color: $color_darkBlue;
-  padding: 3rem;
+  background-color: $color_darkBlue !important;
+  padding: 3rem !important;
   h4 {
     text-align: center;
     color: $color_lightBlue;

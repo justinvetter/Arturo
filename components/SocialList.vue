@@ -4,7 +4,7 @@
     <a href="https://www.facebook.com/Arturo-Inc-434067377137535" target="_blank"><FacebookIcon /></a>
     <a href="https://www.crunchbase.com/organization/arturo-inc" target="_blank"><CbIcon /></a>
     <a href="https://www.instagram.com/arturo.ai/" target="_blank"><InstagramIcon /></a>
-    <a href="#" target="_blank"><MediumIcon /></a>
+    <a href="https://medium.com/@arturo.ai" target="_blank"><MediumIcon /></a>
 </div>
 </template>
 

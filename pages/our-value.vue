@@ -11,12 +11,12 @@
               <span>/04</span>
             </h4>
             <HippoLogo/>
-            <h4>Pre-fill / Sales</h4>
+            <h4>HOMEOWNER QUOTES IN JUST 60 SECONDS</h4>
             <p>
-              "Stop interrupting what people are interested in and be what people are interested in."
-              <span>—Craig Davis, former Chief Creative Officer at J. Walter Thompson.</span>
+              "Hippo’s partnership with Arturo has allowed us to pre-fill valuable data at the individual property level. These insights streamline the client’s application process, while helping us define a highly accurate initial rating and top-quality underwriting requirements."
+              <span>—Mike Gulla // Head of Underwriting // Hippo Insurance</span>
             </p>
-            <a class="button button__white button__white-blue" href="#">/Link</a>
+            <!-- <a class="button button__white button__white-blue" href="#">/Link</a> -->
           </div>
         </div>
       </article>
@@ -34,10 +34,9 @@
             <AmfamLogo/>
             <h4>Claims / Underwriting</h4>
             <p>
-              "Stop interrupting what people are interested in and be what people are interested in."
-              <span>—Craig Davis, former Chief Creative Officer at J. Walter Thompson.</span>
+              American Family utilizes Arturo data throughout multiple parts of their business to improve underwriting performance, identify risk within their book by identifying changes, and predicting the right resources necessary to respond to claim events.
             </p>
-            <a class="button button__white button__white-red" href="#">/Link</a>
+            <!-- <a class="button button__white button__white-red" href="#">/Link</a> -->
           </div>
         </div>
       </article>
@@ -54,13 +53,13 @@
               03
               <span>/04</span>
             </h4>
-            <RoofrLogo/>
+            <img src="~assets/images/openly_logo.png">
             <h4>Book analysis</h4>
             <p>
-              "Stop interrupting what people are interested in and be what people are interested in."
-              <span>—Craig Davis, former Chief Creative Officer at J. Walter Thompson.</span>
+              "Access to quality data is integral to how we quantify risk at Openly. Arturo’s approach, layering sophisticated machine learning on top of high resolution imagery, is a key part of how we gain a deeper understanding of a specific property, and are ultimately able to offer an accurate and competitive rate."
+              <span>—Matt Weilbut // CTO // Openly</span>
             </p>
-            <a class="button button__white button__white-ltBlue" href="#">/Link</a>
+            <!-- <a class="button button__white button__white-ltBlue" href="#">/Link</a> -->
           </div>
         </div>
       </article>
@@ -78,10 +77,9 @@
             <KinLogo/>
             <h4>Property characteristics</h4>
             <p>
-              "Stop interrupting what people are interested in and be what people are interested in."
-              <span>—Craig Davis, former Chief Creative Officer at J. Walter Thompson.</span>
+              Statement: Arturo enables Kin to provide policies built from the ground-up around the homeowner.
             </p>
-            <a class="button button__white button__white-yellow" href="#">/Link</a>
+            <!-- <a class="button button__white button__white-yellow" href="#">/Link</a> -->
           </div>
         </div>
       </article>
@@ -152,7 +150,7 @@ export default {
 
   .card {
     width: 70%;
-    height: 75vh;
+    height: 80vh;
     display: flex;
     margin-top: 2rem;
 
@@ -205,9 +203,9 @@ export default {
       h4 {
         padding-bottom: 1rem;
       }
-      svg {
+      svg,img {
         fill: $color_white;
-        height: 46px;
+        height: 60px;
         display: block;
         margin-bottom: 1rem;
       }
@@ -240,6 +238,14 @@ export default {
   @media (max-width: 1315px) {
     .card {
       width: 90%;
+      div {
+        width: 65%;
+      }
+    }
+
+    .image {
+      background-size: cover !important;
+      width: 35%;
     }
   }
   @media (max-width: 1060px) {

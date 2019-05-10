@@ -252,6 +252,10 @@ export default {
   @media (max-width: 745px) {
     height: auto;
     justify-content: flex-start;
+
+    &.hippo {
+      margin-top: 1.5rem;
+    }
     .card {
       height: auto;
       padding: 2em 0;

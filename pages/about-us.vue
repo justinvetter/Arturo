@@ -178,6 +178,7 @@ export default {
 <style lang="scss" scoped>
 .squish-image {
   background-image: url("~assets/images/img_hero_aboutus_v2.png");
+
 }
 .cards {
   .image {
@@ -192,6 +193,20 @@ export default {
   background-size: contain;
   background-position: center left;
   width: 35%;
+
+}
+
+.bgImage-about{
+  @media (max-width:745px){
+    .careers{
+      display:none;
+    }
+    article{
+      width: 100%;
+      height: auto;
+      padding: 2rem;
+    }
+  }
 }
 
 @keyframes fade-in {
@@ -210,5 +225,19 @@ export default {
   opacity: 0;
   transition: all 0.75s ease;
 }
+
+  @media (max-width: 745px) {
+   .cards__right{
+     .card{
+       width: 100%;
+       div{
+         width: 100%;
+         .card__content{
+           padding: 0 2rem 0 2rem;
+         }
+       }
+     }
+   }
+  }
 </style>
 

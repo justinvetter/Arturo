@@ -1,4 +1,7 @@
 .fullHeight{
     min-height: 100vh;
     position: relative;
+    @media (max-width: 745px) {
+
+    }
 }

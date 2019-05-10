@@ -1,6 +1,6 @@
 <template>
   <div>
-    <modal name="demo" height="auto" :adaptive="true" transition="pop-out" :scrollable="true">
+    <modal name="demo" height="auto" :adaptive="true" transition="pop-out">
       <div class="demo-form">
         <h4>Request a demo</h4>
         <p>
@@ -40,7 +40,7 @@
         </form>
       </div>
     </modal>
-    <modal name="thank-you" height="auto" :adaptive="true" transition="pop-out" :scrollable="true">
+    <modal name="thank-you" height="auto" :adaptive="true" transition="pop-out">
       <h4>
         Success!
         <br>Thanks for the info!

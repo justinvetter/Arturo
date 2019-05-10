@@ -120,6 +120,11 @@
         &:active {
             color: $color_darkBlue;
         }
+        &--solid{
+            color: $color_darkBlue;
+            background-color: $color_teal;
+            border-color: $color_teal;
+        }
     }
     &__spacer{
         margin-top: 2rem;

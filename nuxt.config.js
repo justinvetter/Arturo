@@ -40,6 +40,8 @@ export default {
   plugins: [{
     src: '~plugins/vue-scrollmagic.js',
     ssr: false
+  }, {
+    src: '~plugins/vue-js-modal',
   }],
 
   /*

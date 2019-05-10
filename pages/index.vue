@@ -1,17 +1,13 @@
 <template>
   <div>
-    <section class="hero">
-      <div class="hero__content">
-        <img src="~assets/images/arturo_white_logo.svg">
-        <div class="h__white">
-          <h1>Enables understanding of the physical world</h1>
-        </div>
-      </div>
-    </section>
-    <section class="counting">
-      <h4>AI Insights delivered & counting</h4>
-      <h2 id="countUp">1234</h2>
-    </section>
+    <div id="scroll" class="scroll">
+      Scroll for more
+      <ScrollIcon/>
+    </div>
+    <Hero/>
+
+    <Counting number="1234"/>
+
     <section id="bgImage1" class="bgImage fullHeight">
       <div class="background"></div>
       <article class="blue">
@@ -121,8 +117,11 @@ import KinLogo from "@/components/icons/customer-logos/kin_logo_white.svg?inline
 import RoofrLogo from "@/components/icons/customer-logos/roofr_logo_white.svg?inline";
 import HippoLogo from "@/components/icons/customer-logos/hippo_logo_white.svg?inline";
 import AmfamLogo from "@/components/icons/am_fam_logo_white.svg?inline";
-import Footer from '@/layouts/partials/footer';
-import Cards from '@/components/cards';
+import ScrollIcon from "@/components/icons/scrollIcon.svg?inline";
+import Footer from "@/layouts/partials/footer";
+import Cards from "@/components/cards";
+import Hero from "@/components/Hero";
+import Counting from "@/components/Counting";
 export default {
   components: {
     KinLogo,
@@ -130,10 +129,13 @@ export default {
     HippoLogo,
     AmfamLogo,
     Footer,
-    Cards
+    Cards,
+    Hero,
+    Counting,
+    ScrollIcon
   },
-  mounted() {
 
+  mounted() {
     var animateHTML = function() {
       var elems;
       var windowHeight;
@@ -164,35 +166,6 @@ export default {
     };
     animateHTML().init();
 
-
-    function animateValue(id, start, end, duration) {
-      var obj = document.getElementById(id);
-      var range = end - start;
-      var minTimer = 50;
-      var stepTime = Math.abs(Math.floor(duration / range));
-
-      stepTime = Math.max(stepTime, minTimer);
-
-      var startTime = new Date().getTime();
-      var endTime = startTime + duration;
-      var timer;
-
-      function run() {
-        var now = new Date().getTime();
-        var remaining = Math.max((endTime - now) / duration, 0);
-        var value = Math.round(end - remaining * range);
-        obj.innerHTML = value;
-        if (value == end) {
-          clearInterval(timer);
-        }
-      }
-
-      timer = setInterval(run, stepTime);
-      run();
-    }
-
-    animateValue("countUp", 0, 1234, 3000);
-
     const bg2Background = this.$scrollmagic.scene({
       triggerElement: "#bgImage2 .background",
       duration: 400
@@ -215,7 +188,7 @@ export default {
     const bg3Background = this.$scrollmagic.scene({
       triggerElement: "#bgImage3 .background",
       duration: 400,
-      triggerHook: .5
+      triggerHook: 0.5
     });
     this.$scrollmagic.addScene(
       bg3Background.setTween("#bgImage3 .background", { right: 0 })
@@ -230,25 +203,22 @@ export default {
       bg1Background.setTween("#bgImage1 .background", { right: 0 })
     );
 
-
-
-      const bg1BackgroundOut = this.$scrollmagic.scene({
+    const bg1BackgroundOut = this.$scrollmagic.scene({
       triggerElement: "#bgImage2 .background",
       duration: 400,
-      triggerHook: .5
+      triggerHook: 0.5
     });
     this.$scrollmagic.addScene(
-      bg1BackgroundOut.setTween("#bgImage1 .background", { right: '-80vw' })
+      bg1BackgroundOut.setTween("#bgImage1 .background", { right: "-80vw" })
     );
 
-
-      const bg2BackgroundOut = this.$scrollmagic.scene({
+    const bg2BackgroundOut = this.$scrollmagic.scene({
       triggerElement: "#bgImage3 .background",
       duration: 400,
-      triggerHook: .5
+      triggerHook: 0.5
     });
     this.$scrollmagic.addScene(
-      bg2BackgroundOut.setTween("#bgImage2 .background", { left: '-80vw' })
+      bg2BackgroundOut.setTween("#bgImage2 .background", { left: "-80vw" })
     );
 
     const bg1Article = this.$scrollmagic.scene({
@@ -256,7 +226,6 @@ export default {
       duration: 300,
       triggerHook: 0.7
     });
-
 
     this.$scrollmagic.addScene(
       bg1Article.setTween("#bgImage1 article", { left: "0" })
@@ -278,7 +247,9 @@ export default {
       reverse: true
     });
 
-    this.$scrollmagic.addScene(logos.setPin("#logos", {pushFollowers: false}));
+    this.$scrollmagic.addScene(
+      logos.setPin("#logos", { pushFollowers: false })
+    );
 
     const bg3pin = this.$scrollmagic.scene({
       triggerElement: "#bgImage3",
@@ -286,65 +257,117 @@ export default {
       reverse: true
     });
 
-    this.$scrollmagic.addScene(bg3pin.setPin("#bgImage3", {pushFollowers: false}));
-
-
+    this.$scrollmagic.addScene(
+      bg3pin.setPin("#bgImage3", { pushFollowers: false })
+    );
 
     const bg1Number = this.$scrollmagic.scene({
       triggerElement: "#bgImage1",
-      triggerHook: .35
-    })
+      triggerHook: 0.35
+    });
 
-    this.$scrollmagic.addScene(bg1Number.setClassToggle("#bgImage1 .number", 'reveal-text'))
-
+    this.$scrollmagic.addScene(
+      bg1Number.setClassToggle("#bgImage1 .number", "reveal-text")
+    );
 
     const bg2Number = this.$scrollmagic.scene({
       triggerElement: "#bgImage2",
-      triggerHook: .35
-    })
+      triggerHook: 0.35
+    });
 
-    this.$scrollmagic.addScene(bg2Number.setClassToggle("#bgImage2 .number", 'reveal-text'))
-
+    this.$scrollmagic.addScene(
+      bg2Number.setClassToggle("#bgImage2 .number", "reveal-text")
+    );
 
     const bg3Number = this.$scrollmagic.scene({
       triggerElement: "#bgImage3",
-      triggerHook: .35
-    })
+      triggerHook: 0.35
+    });
 
-    this.$scrollmagic.addScene(bg3Number.setClassToggle("#bgImage3 .number", 'reveal-text'))
-
+    this.$scrollmagic.addScene(
+      bg3Number.setClassToggle("#bgImage3 .number", "reveal-text")
+    );
 
     const bg1article = this.$scrollmagic.scene({
       triggerElement: "#bgImage1",
-      triggerHook: .25
-    })
+      triggerHook: 0.25
+    });
 
-    this.$scrollmagic.addScene(bg1article.setClassToggle("#bgImage1 h4", 'in'))
-
+    this.$scrollmagic.addScene(bg1article.setClassToggle("#bgImage1 h4", "in"));
 
     const bg2article = this.$scrollmagic.scene({
       triggerElement: "#bgImage2",
-      triggerHook: .25
-    })
+      triggerHook: 0.25
+    });
 
-    this.$scrollmagic.addScene(bg2article.setClassToggle("#bgImage2 h4", 'in'))
-
+    this.$scrollmagic.addScene(bg2article.setClassToggle("#bgImage2 h4", "in"));
 
     const bg3article = this.$scrollmagic.scene({
       triggerElement: "#bgImage3",
-      triggerHook: .25
-    })
+      triggerHook: 0.25
+    });
 
-    this.$scrollmagic.addScene(bg3article.setClassToggle("#bgImage3 h4", 'in'))
+    this.$scrollmagic.addScene(bg3article.setClassToggle("#bgImage3 h4", "in"));
+
+    const scene3 = this.$scrollmagic.scene({
+            triggerElement: 'footer',
+            triggerHook: 1,
+            reverse: true,
+        })
+
+    this.$scrollmagic.addScene(
+        scene3
+        .setClassToggle(".scroll", 'hide')
+    )
+
+
+var scrollStop = function (callback) {
+
+  var scroll = document.getElementById('scroll');
+	// Make sure a valid callback was provided
+	if (!callback || typeof callback !== 'function') return;
+
+	// Setup scrolling variable
+	var isScrolling;
+
+	// Listen for scroll events
+	window.addEventListener('scroll', function (event) {
+
+		// Clear our timeout throughout the scroll
+		window.clearTimeout(isScrolling);
+
+		// Set a timeout to run after scrolling ends
+		isScrolling = setTimeout(function() {
+
+      // Run the callback
+
+			callback();
+
+		}, 500);
+
+	}, false);
+
+};
+
+window.onscroll = function (e) {
+var scroll = document.getElementById('scroll');
+    scroll.classList.add('hidden')
+}
+
+scrollStop(function () {
+  var scroll = document.getElementById('scroll');
+    scroll.classList.remove('hidden')
+});
+
   }
 };
 </script>
 
 <style lang="scss" scoped>
-.hero{
+.hero {
   height: 75vh;
 }
-.counting{
+.counting {
   height: 25vh;
 }
 
@@ -379,6 +402,44 @@ export default {
 .hidden {
   opacity: 0;
   transition: all 0.5s ease;
+}
+.scroll {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  z-index: 999;
+  left: 50%;
+  margin-left: -2rem;
+  color: $color_teal;
+  font-weight: bold;
+  transition: opacity .5s ease;
+  svg {
+    fill: $color_teal;
+    width: 2.5rem;
+    height: 2.5rem;
+    position: relative;
+    animation: breath .75s alternate linear infinite;
+  }
+  &.hide{
+    opacity: 0;
+  }
+}
+
+@keyframes breath {
+    0% {
+        top: -6px;
+    }
+
+    50% {
+        top: 0px;
+    }
+
+    100% {
+        top: 6px;
+    }
 }
 </style>
 

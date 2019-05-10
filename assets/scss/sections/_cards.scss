@@ -35,9 +35,10 @@
 
     .card {
         width: 70%;
-        height: 75vh;
+        height: 80vh;
         display: flex;
         margin-top: 2rem;
+
 
         &__blue {
             background-color: $color_blue;
@@ -81,7 +82,7 @@
         }
 
         &__content {
-            padding: 0 5rem 0 2rem;
+            padding: 0 3rem 0 2rem;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -127,7 +128,7 @@
         box-sizing: border-box
     }
 
-    @media (max-width: 1315px) {
+    @media (max-width: 1600px) {
         .card{
             width: 90%
         }

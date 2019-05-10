@@ -10,6 +10,7 @@ export default {
     title: 'Arturo',
     meta: [
       { charset: 'utf-8' },
+      { 'http-equiv': 'X-UA-Compatible', content: 'IE=edge,chrome=1'},
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: pkg.description }
     ],
@@ -40,6 +41,8 @@ export default {
   plugins: [{
     src: '~plugins/vue-scrollmagic.js',
     ssr: false
+  }, {
+    src: '~plugins/vue-js-modal',
   }],
 
   /*
@@ -53,6 +56,11 @@ export default {
   styleResources: {
     scss: [
       'assets/scss/_variables.scss',
+      'assets/scss/helpers/_emCalc.scss',
+      'assets/scss/helpers/_helperClasses.scss',
+      'assets/scss/helpers/_txtColors.scss',
+      'assets/scss/helpers/vertText.scss',
+      'assets/scss/mixins/_fluidType.scss.scss',
     ]
   },
   /*

@@ -88,7 +88,7 @@
             flex-direction: column;
             align-items: center;
             .person{
-                width: 75%;
+                width: 100%;
             }
         }
 
@@ -100,6 +100,7 @@
                 }
                 .person__info{
                     margin-top: 0;
+                    width: auto;
                 }
             }
         }
@@ -183,7 +184,7 @@
             flex-direction: column;
             align-items: center;
             .leader{
-                width: 75%;
+                width: 100%;
             }
         }
 
@@ -195,6 +196,7 @@
                 }
                 .leader__info{
                     margin-top: 0;
+                    width: auto;
                 }
             }
         }

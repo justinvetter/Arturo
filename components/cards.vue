@@ -277,6 +277,7 @@ export default {
       &__two {
         left: 50%;
         background-image: url("~assets/images/img_home_fullloop@2x.jpg");
+        background-position: center;
       }
       &__three {
         left: 0;

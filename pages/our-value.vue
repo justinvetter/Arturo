@@ -150,7 +150,7 @@ export default {
 
   .card {
     width: 70%;
-    height: 80vh;
+    height: 85vh;
     display: flex;
     margin-top: 2rem;
 

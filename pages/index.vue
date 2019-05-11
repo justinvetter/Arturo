@@ -114,7 +114,7 @@
 
 <script>
 import KinLogo from "@/components/icons/customer-logos/kin_logo_white.svg?inline";
-import RoofrLogo from "@/components/icons/customer-logos/roofr_logo_white.svg?inline";
+import OpenlyLogo from "@/components/icons/customer-logos/openly_logo_white.svg?inline";
 import HippoLogo from "@/components/icons/customer-logos/hippo_logo_white.svg?inline";
 import AmfamLogo from "@/components/icons/am_fam_logo_white.svg?inline";
 import ScrollIcon from "@/components/icons/scrollIcon.svg?inline";
@@ -125,7 +125,7 @@ import Counting from "@/components/Counting";
 export default {
   components: {
     KinLogo,
-    RoofrLogo,
+    OpenlyLogo,
     HippoLogo,
     AmfamLogo,
     Footer,

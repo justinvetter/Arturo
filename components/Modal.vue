@@ -4,7 +4,7 @@
       <div class="demo-form">
         <h4>Request a demo</h4>
         <p>
-          Thanks for your intrest in a demo.
+          Thanks for your interest in a demo.
           <br>We just need some basic information.
         </p>
         <!-- our signup form ===================== -->

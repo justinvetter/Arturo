@@ -11,7 +11,7 @@
               <span>/04</span>
             </h4>
             <HippoLogo/>
-            <h4>HOMEOWNER QUOTES IN JUST 60 SECONDS</h4>
+            <h4>Pre-Fill / Underwriting</h4>
             <p>
               "Hippo’s partnership with Arturo has allowed us to pre-fill valuable data at the individual property level. These insights streamline the client’s application process, while helping us define a highly accurate initial rating and top-quality underwriting requirements."
               <span>—Mike Gulla // Head of Underwriting // Hippo Insurance</span>
@@ -54,7 +54,7 @@
               <span>/04</span>
             </h4>
             <img src="~assets/images/openly_logo.png">
-            <h4>Book analysis</h4>
+            <h4>Pre-Fill / Quotation</h4>
             <p>
               "Access to quality data is integral to how we quantify risk at Openly. Arturo’s approach, layering sophisticated machine learning on top of high resolution imagery, is a key part of how we gain a deeper understanding of a specific property, and are ultimately able to offer an accurate and competitive rate."
               <span>—Matt Weilbut // CTO // Openly</span>
@@ -75,9 +75,9 @@
               <span>/04</span>
             </h4>
             <KinLogo/>
-            <h4>Property characteristics</h4>
+            <h4>Underwriting</h4>
             <p>
-              Statement: Arturo enables Kin to provide policies built from the ground-up around the homeowner.
+              Arturo enables Kin to provide policies built from the ground-up around the homeowner.
             </p>
             <!-- <a class="button button__white button__white-yellow" href="#">/Link</a> -->
           </div>

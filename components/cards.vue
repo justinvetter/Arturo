@@ -12,7 +12,9 @@
             </h4>
             <h4>Transparency</h4>
             <p>We constantly assess our model’s performance and publish our performance metrics</p>
+            <!-- temporarily removing till blog details are up
             <a class="button button__white button__white-blue" href="#">/Link</a>
+            -->
           </div>
         </div>
         <div class="articleTwo hide">

@@ -35,7 +35,7 @@
         <div class="bottom-center">©2019 Arturo inc.</div>
         <div class="bottom-right">
           <SocialList class="social"/>
-          <nuxt-link to="/">Home</nuxt-link>//<nuxt-link to="about-us">About Us</nuxt-link>//<nuxt-link to="our-value">Our Value</nuxt-link>
+          <nuxt-link to="/">Home</nuxt-link> // <nuxt-link to="about-us">About Us</nuxt-link> // <nuxt-link to="our-value">Our Value</nuxt-link>
         </div>
       </div>
     </div>

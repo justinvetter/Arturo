@@ -13,7 +13,7 @@
         <div class="card-right">
           <MediumIcon/>
           <h5 class="h__dkBlue">Subscribe to our blog on Medium</h5>
-          <a class="button" href="https://medium.com/@arturo.ai" target="_blank">/ link to site</a>
+          <a class="button" href="https://medium.com/@arturo.ai" target="_blank">/ visit blog</a>
         </div>
       </div>
     </div>

@@ -1,7 +1,7 @@
 <template>
     <section class="counting">
       <h4>AI Insights delivered & counting </h4>
-      <h2 id="countUp">1234</h2>
+      <h2 id="countUp">6,116,550</h2>
     </section>
 </template>
 
@@ -34,7 +34,7 @@ export default {
       run();
     }
 
-    animateValue("countUp", 0, 1234, 3000);
+    animateValue("countUp", 0, 6116550, 1000);
 
     }
 }

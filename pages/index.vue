@@ -61,7 +61,7 @@
             <KinLogo/>
           </div>
           <div>
-            <RoofrLogo/>
+            <OpenlyLogo/>
           </div>
           <div>
             <HippoLogo/>

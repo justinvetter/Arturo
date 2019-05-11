@@ -25,7 +25,7 @@
             <ArturoLogo/>
           </nuxt-link>
           <div class="address">
-            350 N Orleans, Suite 850,
+            350 North Orleans Street, Suite 8000N
             <br>Chicago IL 60654
             <br>312-535-3006
             <br>

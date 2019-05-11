@@ -94,7 +94,7 @@
                 02
                 <span>/03</span>
               </h4>
-              <p>These models process the most recent input data available including images, mobile device, property records, and weather data</p>
+              <p>These models process the most recent input data available including images, mobile device data, property records, and weather data</p>
             </div>
             <div class="process__item hidden">
               <img src="~assets/images/icon_ui.svg">

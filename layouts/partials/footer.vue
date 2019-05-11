@@ -25,11 +25,12 @@
             <ArturoLogo/>
           </nuxt-link>
           <div class="address">
-            350 North Orleans Street, Suite 8000N
+            350 North Orleans Street
+            <br>Suite 8000N
             <br>Chicago IL 60654
             <br>312-535-3006
             <br>
-            <a href="mailto:contact@arturo.com">contact@arturo.com</a>
+            <a href="mailto:info@arturo.com">info@arturo.com</a>
           </div>
         </div>
         <div class="bottom-center">©2019 Arturo inc.</div>

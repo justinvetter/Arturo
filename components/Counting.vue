@@ -20,10 +20,7 @@ export default {
       var size_tolerance_min = 0.2;
       var size_tolerance_max = 0.12;
       function fitTextToContainer(str) {
-        console.log('Fitting text to container', str);
-        
         if (str.length === previous_length) {
-          console.log('Matches previous length. Skipping');
           return;
         }
         previous_length = str.length;
@@ -34,7 +31,6 @@ export default {
         var tolerance_min = container.getBoundingClientRect().width * (1 - size_tolerance_min);
         var tolerance_max = container.getBoundingClientRect().width * (1 - size_tolerance_max);
         if (size < tolerance_max) {
-          console.log('Less than threshold at full. Exiting', size, tolerance_max);
           container.style.fontSize = `${initial_font_size}vh`;
           return;
         }
@@ -42,21 +38,16 @@ export default {
         var lg_perc = initial_font_size;
         var max_steps = 25;
         var step = -1;
-        console.log('Calculating size to fit target', tolerance_max);
         while (size < tolerance_min || size > tolerance_max) {
           step++;
           if (step >= max_steps) {
-            console.log('Max Steps Reached');
             break;
           }
           if (size < tolerance_min) {
-            console.log('Too small', size);
             sm_perc = perc;
           } else {
-            console.log('Too large', size);
             lg_perc = perc;
           }
-          console.log(`sm_perc: ${sm_perc}; lg_perc: ${lg_perc}; perc: ${perc}`);
           if (sm_perc === null) {
             perc = lg_perc / 10;
           } else {
@@ -65,7 +56,6 @@ export default {
           ctx.font = `${perc}vh "Gotham", Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif`;
           size = ctx.measureText(str).width;
         }
-        console.log(`Font Size calculated to ${perc}vh`);
         container.style.fontSize = `${perc}vh`;
       }
       function animateValue(id, start, end, duration) {

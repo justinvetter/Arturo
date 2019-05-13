@@ -365,10 +365,6 @@ scrollStop(function () {
 
 <style lang="scss" scoped>
 
-* {
-  box-sizing: border-box;
-}
-
 .hero {
   height: 75vh;
 }

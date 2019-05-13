@@ -131,38 +131,42 @@ export default {
         align-items: center;
         justify-content: flex-end;
         padding-right: 3rem;
+        box-sizing: border-box;
       }
 
       #countPhraseWrapper {
-          color: $color_darkBlue;
-          font-weight: 100;
-          font-size: em(24);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          width: 125px;
-          flex: none;
-          line-height: 1.25;
+        color: $color_darkBlue;
+        font-weight: 100;
+        font-size: em(24);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 125px;
+        flex: none;
+        line-height: 1.25;
+        box-sizing: border-box;
       }
 
       #countUp {
-          position: relative;
-          font-size: em(125.78);
-          border-left: solid 2px $color_teal;
-          padding-left: 3rem;
-          padding-right: 3rem;
-          width: 62%;
-          height: 100%;
+        position: relative;
+        font-size: em(125.78);
+        border-left: solid 2px $color_teal;
+        padding-left: 3rem;
+        width: 62%;
+        height: 100%;
+        box-sizing: border-box;
       }
 
       #countUpWrapper {
-          color: $color_blue;
-          font-weight: bold;
-          line-height: 1;
-          width: 100%;
-          height: 100%;
-          display: flex;
-          align-items: center;
+        color: $color_blue;
+        font-weight: bold;
+        line-height: 1;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        box-sizing: border-box;
+        justify-content: center;
       }
 
       @media (max-width: 825px) {

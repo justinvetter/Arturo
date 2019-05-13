@@ -364,11 +364,13 @@ scrollStop(function () {
 </script>
 
 <style lang="scss" scoped>
+
+* {
+  box-sizing: border-box;
+}
+
 .hero {
   height: 75vh;
-}
-.counting {
-  height: 25vh;
 }
 
 #bgImage1 {

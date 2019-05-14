@@ -18,6 +18,7 @@ export default {
       const initial_font_size = 14.5; // vh
       const size_tolerance_min = 0.2;
       const size_tolerance_max = 0.12;
+      const count_up_duration = 1500; // milliseconds
       var previous_length = null;
       var final_text = null; // string
       var current_count = null; // number
@@ -38,7 +39,7 @@ export default {
               let response_body = JSON.parse(xhr.responseText);
               current_count = response_body && response_body['inference_count'] ? response_body['inference_count'] : 0;
               if (!counter_refresh_step) {
-                animateValue("countUpWrapper", 0, current_count, 3000);
+                animateValue("countUpWrapper", 0, current_count, count_up_duration);
               } else {
                 fitTextToContainer(format_number(current_count));
               }

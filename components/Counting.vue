@@ -20,6 +20,36 @@ export default {
       const size_tolerance_max = 0.12;
       var previous_length = null;
       var final_text = null; // string
+      var current_count = null; // number
+      var counter_refresh_step = 0;
+      var refresh_interval = 900000; // milliseconds - set to 900,000 - 15 minutes
+
+      const getCount = function () {
+        // vanilla JS
+        let xhr = new XMLHttpRequest();
+        xhr.open('GET', '/_metrics/metrics.json');
+        xhr.send(null);
+        xhr.onreadystatechange = function () {
+          let DONE = 4; // readyState 4 means the request is done.
+          let OK = 200; // status 200 is a successful return.
+          if (xhr.readyState === DONE) {
+            if (xhr.status === OK) {
+              console.log(xhr.responseText); // 'This is the returned text.'
+              let response_body = JSON.parse(xhr.responseText);
+              current_count = response_body && response_body['inference_count'] ? response_body['inference_count'] : 0;
+              if (!counter_refresh_step) {
+                animateValue("countUpWrapper", 0, current_count, 3000);
+              } else {
+                fitTextToContainer(format_number(current_count));
+              }
+              counter_refresh_step++;
+            } else {
+              console.log('Error: ' + xhr.status); // An error occurred during the request.
+            }
+          }
+        };
+      }
+
       function fitTextToContainer(str) {
         if (str.length === previous_length) {
           return;
@@ -111,8 +141,9 @@ export default {
         timer = setInterval(run, stepTime);
         run();
       }
-      animateValue("countUpWrapper", 0, 6000000, 3000);
       window.addEventListener('resize', fitTextToContainer, false);
+      getCount();
+      setInterval(getCount, refresh_interval);
     }
 }
 </script>

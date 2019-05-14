@@ -1,7 +1,7 @@
 <template>
     <section class="counting">
       <div id="countPhrase" >
-        <h4 id="countPhraseWrapper" >AI Insights delivered & counting</h4>
+        <h4 id="countPhraseWrapper" >AI Insights delivered &amp; counting</h4>
       </div>
       <div id="countUp">
         <h2 id="countUpWrapper" > </h2>

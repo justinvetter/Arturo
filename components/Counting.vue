@@ -12,32 +12,41 @@
 <script>
 export default {
     mounted() {
-      var canv = document.createElement('canvas');
-      var ctx = canv.getContext('2d');
-      var container = document.getElementById('countUpWrapper');
+      const canv = document.createElement('canvas');
+      const ctx = canv.getContext('2d');
+      const container = document.getElementById('countUpWrapper');
+      const initial_font_size = 14.5; // vh
+      const size_tolerance_min = 0.2;
+      const size_tolerance_max = 0.12;
       var previous_length = null;
-      var initial_font_size = 14.5; // vh
-      var size_tolerance_min = 0.2;
-      var size_tolerance_max = 0.12;
+      var final_text = null; // string
       function fitTextToContainer(str) {
         if (str.length === previous_length) {
           return;
         }
+        if (!str) {
+          str = final_text;
+        } else {
+          final_text = str;
+        }
+        if (!str) {
+          str = '';
+        }
         previous_length = str.length;
         
         ctx.font = `${initial_font_size}vh "Gotham", Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif`;
-        var size = ctx.measureText(str).width;
-        var perc = initial_font_size;
-        var tolerance_min = container.getBoundingClientRect().width * (1 - size_tolerance_min);
-        var tolerance_max = container.getBoundingClientRect().width * (1 - size_tolerance_max);
+        let size = ctx.measureText(str).width;
+        let perc = initial_font_size;
+        let tolerance_min = container.getBoundingClientRect().width * (1 - size_tolerance_min);
+        let tolerance_max = container.getBoundingClientRect().width * (1 - size_tolerance_max);
         if (size < tolerance_max) {
           container.style.fontSize = `${initial_font_size}vh`;
           return;
         }
-        var sm_perc = null;
-        var lg_perc = initial_font_size;
-        var max_steps = 25;
-        var step = -1;
+        let sm_perc = null;
+        let lg_perc = parseInt(String(initial_font_size));
+        let max_steps = 25;
+        let step = -1;
         while (size < tolerance_min || size > tolerance_max) {
           step++;
           if (step >= max_steps) {
@@ -60,14 +69,14 @@ export default {
       }
 
       function format_number(num) {
-        var p_num = parseInt(num);
+        let p_num = parseInt(num);
         if (isNaN(p_num) || !isFinite(p_num)) {
           return String(num);
         }
         p_num = String(p_num);
-        var retval = '';
-        for (var i = p_num.length - 1; i >= 0; i--) {
-          var n_id = p_num.length - (i + 1);
+        let retval = '';
+        for (let i = p_num.length - 1; i >= 0; i--) {
+          let n_id = p_num.length - (i + 1);
           if (retval.length && n_id % 3 === 0) {
             retval = ',' + retval;
           }
@@ -102,7 +111,8 @@ export default {
         timer = setInterval(run, stepTime);
         run();
       }
-      animateValue("countUpWrapper", 0, 1234, 3000);
+      animateValue("countUpWrapper", 0, 6000000, 3000);
+      window.addEventListener('resize', fitTextToContainer, false);
     }
 }
 </script>

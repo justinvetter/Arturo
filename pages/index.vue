@@ -310,15 +310,15 @@ export default {
     this.$scrollmagic.addScene(bg3article.setClassToggle("#bgImage3 h4", "in"));
 
     const scene3 = this.$scrollmagic.scene({
-            triggerElement: 'footer',
-            triggerHook: 1,
-            reverse: true,
-        })
+        triggerElement: 'footer',
+        triggerHook: 1,
+        reverse: true,
+    });
 
-    this.$scrollmagic.addScene(
-        scene3
-        .setClassToggle(".scroll", 'hide')
-    )
+    scene3.setClassToggle('.scroll', 'hide');
+    scene3.setClassToggle('#slideout-menu', 'hide');
+
+    this.$scrollmagic.addScene(scene3);
 
 
 var scrollStop = function (callback) {

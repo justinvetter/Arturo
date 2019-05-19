@@ -13,6 +13,14 @@
         z-index: 0;
         top: 0;
         right: -80vw;
+        transition: right 1s ease;
+        &.on{
+            right: 0;
+        }
+
+        &.off{
+            right: -80vw;
+        }
     }
 
     article {
@@ -23,6 +31,14 @@
         z-index: 10;
         left: -80vw;
         position: absolute;
+        transition: left 1s ease;
+        &.on{
+            left: 0;
+        }
+
+        &.off{
+            left: -80vw;
+        }
 
         &.blue {
             background-color: $color_blue;
@@ -45,12 +61,28 @@
     &__right {
         .background {
             left: -80vw;
+            transition: left 1s ease;
+            &.on{
+                left: 0;
+            }
+
+            &.off{
+                left: -80vw;
+            }
         }
 
         article {
             justify-self: flex-end;
             margin-left: auto;
             right: -80vw;
+            transition: right 1s ease;
+            &.on{
+                right: 0;
+            }
+
+            &.off{
+                right: -80vw;
+            }
         }
     }
 

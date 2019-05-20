@@ -21,7 +21,7 @@ export default {
       const count_up_duration = 1500; // milliseconds
       var previous_length = null;
       var final_text = null; // string
-      var current_count = null; // number
+      var current_count = 5555555; // number
       var counter_refresh_step = 0;
       var refresh_interval = 900000; // milliseconds - set to 900,000 - 15 minutes
 
@@ -35,18 +35,18 @@ export default {
           let OK = 200; // status 200 is a successful return.
           if (xhr.readyState === DONE) {
             if (xhr.status === OK) {
-              console.log(xhr.responseText); // 'This is the returned text.'
               let response_body = JSON.parse(xhr.responseText);
               current_count = response_body && response_body['inference_count'] ? response_body['inference_count'] : 0;
-              if (!counter_refresh_step) {
-                animateValue("countUpWrapper", 0, current_count, count_up_duration);
-              } else {
-                fitTextToContainer(format_number(current_count));
-              }
-              counter_refresh_step++;
+              console.log(xhr.responseText); // 'This is the returned text.'
             } else {
               console.log('Error: ' + xhr.status); // An error occurred during the request.
             }
+            if (!counter_refresh_step) {
+              animateValue("countUpWrapper", 0, current_count, count_up_duration);
+            } else {
+              fitTextToContainer(format_number(current_count));
+            }
+            counter_refresh_step++;
           }
         };
       }
@@ -175,6 +175,7 @@ export default {
         align-items: center;
         justify-content: center;
         width: 125px;
+        max-width: 100%;
         flex: none;
         line-height: 1.25;
         box-sizing: border-box;
@@ -218,6 +219,8 @@ export default {
 
         #countPhraseWrapper {
           width: auto;
+          text-align: center;
+          padding-top:2.2vh;
         }
 
         #countUp {

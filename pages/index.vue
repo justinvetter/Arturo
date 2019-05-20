@@ -136,6 +136,8 @@ export default {
   },
 
   mounted() {
+    const _this = this;
+    // Shows/Hides the "Scroll for more" widget
     var animateHTML = function() {
       var elems;
       var windowHeight;
@@ -166,199 +168,207 @@ export default {
     };
     animateHTML().init();
 
-    const bg2Background = this.$scrollmagic.scene({
-      triggerElement: "#bgImage2 .background",
-      duration: 400
+    var scenes_created = false;
+    function createScenes() {
+      if (scenes_created) {
+        return;
+      }
+      const bg2Background = _this.$scrollmagic.scene({
+        triggerElement: "#bgImage2 .background",
+        duration: 400
+      });
+
+      _this.$scrollmagic.addScene(
+        bg2Background.setTween("#bgImage2 .background", { left: 0 })
+      );
+
+      const bg2Article = _this.$scrollmagic.scene({
+        triggerElement: "#bgImage2 .background",
+        duration: 300,
+        triggerHook: 0.7
+      });
+
+      _this.$scrollmagic.addScene(
+        bg2Article.setTween("#bgImage2 article", { right: "0" })
+      );
+
+      const bg3Background = _this.$scrollmagic.scene({
+        triggerElement: "#bgImage3 .background",
+        duration: 400,
+        triggerHook: 0.5
+      });
+      _this.$scrollmagic.addScene(
+        bg3Background.setTween("#bgImage3 .background", { right: 0 })
+      );
+
+      const bg1Background = _this.$scrollmagic.scene({
+        triggerElement: "#bgImage1 .background",
+        duration: 400,
+        triggerHook: 1
+      });
+      _this.$scrollmagic.addScene(
+        bg1Background.setTween("#bgImage1 .background", { right: 0 })
+      );
+
+      const bg1BackgroundOut = _this.$scrollmagic.scene({
+        triggerElement: "#bgImage2 .background",
+        duration: 400,
+        triggerHook: 0.5
+      });
+      _this.$scrollmagic.addScene(
+        bg1BackgroundOut.setTween("#bgImage1 .background", { right: "-80vw" })
+      );
+
+      const bg2BackgroundOut = _this.$scrollmagic.scene({
+        triggerElement: "#bgImage3 .background",
+        duration: 400,
+        triggerHook: 0.5
+      });
+      _this.$scrollmagic.addScene(
+        bg2BackgroundOut.setTween("#bgImage2 .background", { left: "-80vw" })
+      );
+
+      const bg1Article = _this.$scrollmagic.scene({
+        triggerElement: "#bgImage1 .background",
+        duration: 300,
+        triggerHook: 0.7
+      });
+
+      _this.$scrollmagic.addScene(
+        bg1Article.setTween("#bgImage1 article", { left: "0" })
+      );
+
+      const bg3Article = _this.$scrollmagic.scene({
+        triggerElement: "#bgImage3 .background",
+        duration: 300,
+        triggerHook: 0.7
+      });
+
+      _this.$scrollmagic.addScene(
+        bg3Article.setTween("#bgImage3 article", { left: "0" })
+      );
+
+      const logos = _this.$scrollmagic.scene({
+        triggerElement: "#logos",
+        triggerHook: "onLeave",
+        reverse: true
+      });
+
+      _this.$scrollmagic.addScene(
+        logos.setPin("#logos", { pushFollowers: false })
+      );
+
+      const bg3pin = _this.$scrollmagic.scene({
+        triggerElement: "#bgImage3",
+        triggerHook: "onLeave",
+        reverse: true
+      });
+
+      _this.$scrollmagic.addScene(
+        bg3pin.setPin("#bgImage3", { pushFollowers: false })
+      );
+
+      const bg1Number = _this.$scrollmagic.scene({
+        triggerElement: "#bgImage1",
+        triggerHook: 0.35
+      });
+
+      _this.$scrollmagic.addScene(
+        bg1Number.setClassToggle("#bgImage1 .number", "reveal-text")
+      );
+
+      const bg2Number = _this.$scrollmagic.scene({
+        triggerElement: "#bgImage2",
+        triggerHook: 0.35
+      });
+
+      _this.$scrollmagic.addScene(
+        bg2Number.setClassToggle("#bgImage2 .number", "reveal-text")
+      );
+
+      const bg3Number = _this.$scrollmagic.scene({
+        triggerElement: "#bgImage3",
+        triggerHook: 0.35
+      });
+
+      _this.$scrollmagic.addScene(
+        bg3Number.setClassToggle("#bgImage3 .number", "reveal-text")
+      );
+
+      const bg1article = _this.$scrollmagic.scene({
+        triggerElement: "#bgImage1",
+        triggerHook: 0.25
+      });
+
+      _this.$scrollmagic.addScene(bg1article.setClassToggle("#bgImage1 h4", "in"));
+
+      const bg2article = _this.$scrollmagic.scene({
+        triggerElement: "#bgImage2",
+        triggerHook: 0.25
+      });
+
+      _this.$scrollmagic.addScene(bg2article.setClassToggle("#bgImage2 h4", "in"));
+
+      const bg3article = _this.$scrollmagic.scene({
+        triggerElement: "#bgImage3",
+        triggerHook: 0.25
+      });
+
+      _this.$scrollmagic.addScene(bg3article.setClassToggle("#bgImage3 h4", "in"));
+
+      const scene3 = _this.$scrollmagic.scene({
+          triggerElement: 'footer',
+          triggerHook: 1,
+          reverse: true,
+      });
+
+      scene3.setClassToggle('.scroll', 'hide');
+      scene3.setClassToggle('#slideout-menu', 'hide');
+      _this.$scrollmagic.addScene(scene3);
+
+      let elem_bgImage1 = document.getElementById('bgImage1');
+      if (elem_bgImage1)
+        elem_bgImage1.classList.add('initialized');
+
+      let elem_bgImage2 = document.getElementById('bgImage2');
+      if (elem_bgImage2)
+        elem_bgImage2.classList.add('initialized');
+
+      let elem_bgImage3 = document.getElementById('bgImage3');
+      if (elem_bgImage3)
+        elem_bgImage3.classList.add('initialized');
+    }
+
+    var scrollStop = function (callback) {
+      // Make sure a valid callback was provided
+      if (!callback || typeof callback !== 'function') return;
+      // Setup scrolling variable
+      var isScrolling;
+      // Listen for scroll events
+      window.addEventListener('scroll', function (event) {
+        // Clear our timeout throughout the scroll
+        window.clearTimeout(isScrolling);
+        // Set a timeout to run after scrolling ends
+        isScrolling = setTimeout(function() {
+          // Run the callback
+          callback();
+        }, 500);
+      }, false);
+    };
+
+    window.onscroll = function (e) {
+      var scroll = document.getElementById('scroll');
+      scroll.classList.add('hidden');
+      if (!scenes_created) {
+        createScenes();
+        scenes_created = true;
+      }
+    };
+
+    scrollStop(function () {
+      var scroll = document.getElementById('scroll');
+      scroll.classList.remove('hidden');
     });
-
-    this.$scrollmagic.addScene(
-      bg2Background.setTween("#bgImage2 .background", { left: 0 })
-    );
-
-    const bg2Article = this.$scrollmagic.scene({
-      triggerElement: "#bgImage2 .background",
-      duration: 300,
-      triggerHook: 0.7
-    });
-
-    this.$scrollmagic.addScene(
-      bg2Article.setTween("#bgImage2 article", { right: "0" })
-    );
-
-    const bg3Background = this.$scrollmagic.scene({
-      triggerElement: "#bgImage3 .background",
-      duration: 400,
-      triggerHook: 0.5
-    });
-    this.$scrollmagic.addScene(
-      bg3Background.setTween("#bgImage3 .background", { right: 0 })
-    );
-
-    const bg1Background = this.$scrollmagic.scene({
-      triggerElement: "#bgImage1 .background",
-      duration: 400,
-      triggerHook: 1
-    });
-    this.$scrollmagic.addScene(
-      bg1Background.setTween("#bgImage1 .background", { right: 0 })
-    );
-
-    const bg1BackgroundOut = this.$scrollmagic.scene({
-      triggerElement: "#bgImage2 .background",
-      duration: 400,
-      triggerHook: 0.5
-    });
-    this.$scrollmagic.addScene(
-      bg1BackgroundOut.setTween("#bgImage1 .background", { right: "-80vw" })
-    );
-
-    const bg2BackgroundOut = this.$scrollmagic.scene({
-      triggerElement: "#bgImage3 .background",
-      duration: 400,
-      triggerHook: 0.5
-    });
-    this.$scrollmagic.addScene(
-      bg2BackgroundOut.setTween("#bgImage2 .background", { left: "-80vw" })
-    );
-
-    const bg1Article = this.$scrollmagic.scene({
-      triggerElement: "#bgImage1 .background",
-      duration: 300,
-      triggerHook: 0.7
-    });
-
-    this.$scrollmagic.addScene(
-      bg1Article.setTween("#bgImage1 article", { left: "0" })
-    );
-
-    const bg3Article = this.$scrollmagic.scene({
-      triggerElement: "#bgImage3 .background",
-      duration: 300,
-      triggerHook: 0.7
-    });
-
-    this.$scrollmagic.addScene(
-      bg3Article.setTween("#bgImage3 article", { left: "0" })
-    );
-
-    const logos = this.$scrollmagic.scene({
-      triggerElement: "#logos",
-      triggerHook: "onLeave",
-      reverse: true
-    });
-
-    this.$scrollmagic.addScene(
-      logos.setPin("#logos", { pushFollowers: false })
-    );
-
-    const bg3pin = this.$scrollmagic.scene({
-      triggerElement: "#bgImage3",
-      triggerHook: "onLeave",
-      reverse: true
-    });
-
-    this.$scrollmagic.addScene(
-      bg3pin.setPin("#bgImage3", { pushFollowers: false })
-    );
-
-    const bg1Number = this.$scrollmagic.scene({
-      triggerElement: "#bgImage1",
-      triggerHook: 0.35
-    });
-
-    this.$scrollmagic.addScene(
-      bg1Number.setClassToggle("#bgImage1 .number", "reveal-text")
-    );
-
-    const bg2Number = this.$scrollmagic.scene({
-      triggerElement: "#bgImage2",
-      triggerHook: 0.35
-    });
-
-    this.$scrollmagic.addScene(
-      bg2Number.setClassToggle("#bgImage2 .number", "reveal-text")
-    );
-
-    const bg3Number = this.$scrollmagic.scene({
-      triggerElement: "#bgImage3",
-      triggerHook: 0.35
-    });
-
-    this.$scrollmagic.addScene(
-      bg3Number.setClassToggle("#bgImage3 .number", "reveal-text")
-    );
-
-    const bg1article = this.$scrollmagic.scene({
-      triggerElement: "#bgImage1",
-      triggerHook: 0.25
-    });
-
-    this.$scrollmagic.addScene(bg1article.setClassToggle("#bgImage1 h4", "in"));
-
-    const bg2article = this.$scrollmagic.scene({
-      triggerElement: "#bgImage2",
-      triggerHook: 0.25
-    });
-
-    this.$scrollmagic.addScene(bg2article.setClassToggle("#bgImage2 h4", "in"));
-
-    const bg3article = this.$scrollmagic.scene({
-      triggerElement: "#bgImage3",
-      triggerHook: 0.25
-    });
-
-    this.$scrollmagic.addScene(bg3article.setClassToggle("#bgImage3 h4", "in"));
-
-    const scene3 = this.$scrollmagic.scene({
-        triggerElement: 'footer',
-        triggerHook: 1,
-        reverse: true,
-    });
-
-    scene3.setClassToggle('.scroll', 'hide');
-    scene3.setClassToggle('#slideout-menu', 'hide');
-
-    this.$scrollmagic.addScene(scene3);
-
-
-var scrollStop = function (callback) {
-
-  var scroll = document.getElementById('scroll');
-	// Make sure a valid callback was provided
-	if (!callback || typeof callback !== 'function') return;
-
-	// Setup scrolling variable
-	var isScrolling;
-
-	// Listen for scroll events
-	window.addEventListener('scroll', function (event) {
-
-		// Clear our timeout throughout the scroll
-		window.clearTimeout(isScrolling);
-
-		// Set a timeout to run after scrolling ends
-		isScrolling = setTimeout(function() {
-
-      // Run the callback
-
-			callback();
-
-		}, 500);
-
-	}, false);
-
-};
-
-window.onscroll = function (e) {
-var scroll = document.getElementById('scroll');
-    scroll.classList.add('hidden')
-}
-
-scrollStop(function () {
-  var scroll = document.getElementById('scroll');
-    scroll.classList.remove('hidden')
-});
-
   }
 };
 </script>

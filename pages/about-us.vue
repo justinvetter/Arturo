@@ -279,8 +279,10 @@ export default {
 }
 
 @media (max-width: 1000px) {
+  /*
   height: auto;
   justify-content: flex-start;
+  */
   .card {
     height: auto;
     padding: 2em 0;

@@ -1,5 +1,6 @@
 <template>
   <div>
+    <ScrollForMore/>
     <section class="cards cards__right fullHeight hippo">
       <div class="image"></div>
       <article class="card card__blue">
@@ -94,6 +95,7 @@ import KinLogo from "@/components/icons/customer-logos/kin_logo_white.svg?inline
 import RoofrLogo from "@/components/icons/customer-logos/roofr_logo_white.svg?inline";
 import HippoLogo from "@/components/icons/customer-logos/hippo_logo_white.svg?inline";
 import AmfamLogo from "@/components/icons/am_fam_logo_white.svg?inline";
+import ScrollForMore from "@/components/ScrollForMore";
 import Footer from "@/layouts/partials/footer";
 export default {
   components: {
@@ -101,6 +103,7 @@ export default {
     RoofrLogo,
     HippoLogo,
     AmfamLogo,
+    ScrollForMore,
     Footer
   },
   head() {

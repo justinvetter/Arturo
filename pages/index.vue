@@ -1,9 +1,6 @@
 <template>
   <div>
-    <div id="scroll" class="scroll">
-      Scroll for more
-      <ScrollIcon/>
-    </div>
+    <ScrollForMore/>
     <Hero/>
 
     <Counting number="1234"/>
@@ -117,7 +114,7 @@ import KinLogo from "@/components/icons/customer-logos/kin_logo_white.svg?inline
 import OpenlyLogo from "@/components/icons/customer-logos/openly_logo_white.svg?inline";
 import HippoLogo from "@/components/icons/customer-logos/hippo_logo_white.svg?inline";
 import AmfamLogo from "@/components/icons/am_fam_logo_white.svg?inline";
-import ScrollIcon from "@/components/icons/scrollIcon.svg?inline";
+import ScrollForMore from "@/components/ScrollForMore";
 import Footer from "@/layouts/partials/footer";
 import Cards from "@/components/cards";
 import Hero from "@/components/Hero";
@@ -128,11 +125,11 @@ export default {
     OpenlyLogo,
     HippoLogo,
     AmfamLogo,
+    ScrollForMore,
     Footer,
     Cards,
     Hero,
-    Counting,
-    ScrollIcon
+    Counting
   },
 
   mounted() {
@@ -150,6 +147,7 @@ export default {
       function addEventHandlers() {
         window.addEventListener("scroll", checkPosition);
         window.addEventListener("resize", init);
+        checkPosition();
       }
       function checkPosition() {
         for (var i = 0; i < elems.length; i++) {
@@ -316,16 +314,6 @@ export default {
 
       _this.$scrollmagic.addScene(bg3article.setClassToggle("#bgImage3 h4", "in"));
 
-      const scene3 = _this.$scrollmagic.scene({
-          triggerElement: 'footer',
-          triggerHook: 1,
-          reverse: true,
-      });
-
-      scene3.setClassToggle('.scroll', 'hide');
-      scene3.setClassToggle('#slideout-menu', 'hide');
-      _this.$scrollmagic.addScene(scene3);
-
       let elem_bgImage1 = document.getElementById('bgImage1');
       if (elem_bgImage1)
         elem_bgImage1.classList.add('initialized');
@@ -339,36 +327,15 @@ export default {
         elem_bgImage3.classList.add('initialized');
     }
 
-    var scrollStop = function (callback) {
-      // Make sure a valid callback was provided
-      if (!callback || typeof callback !== 'function') return;
-      // Setup scrolling variable
-      var isScrolling;
-      // Listen for scroll events
-      window.addEventListener('scroll', function (event) {
-        // Clear our timeout throughout the scroll
-        window.clearTimeout(isScrolling);
-        // Set a timeout to run after scrolling ends
-        isScrolling = setTimeout(function() {
-          // Run the callback
-          callback();
-        }, 500);
-      }, false);
-    };
-
-    window.onscroll = function (e) {
-      var scroll = document.getElementById('scroll');
-      scroll.classList.add('hidden');
+    const react_to_scroll = function() {
       if (!scenes_created) {
-        createScenes();
-        scenes_created = true;
+          createScenes();
+          scenes_created = true;
+          window.removeEventListener('scroll', react_to_scroll, false);
       }
-    };
+    }
 
-    scrollStop(function () {
-      var scroll = document.getElementById('scroll');
-      scroll.classList.remove('hidden');
-    });
+    window.addEventListener('scroll', react_to_scroll, false);
   }
 };
 </script>
@@ -413,43 +380,4 @@ export default {
   opacity: 0;
   transition: all 0.5s ease;
 }
-.scroll {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  bottom: 0;
-  z-index: 999;
-  left: 50%;
-  margin-left: -2rem;
-  color: $color_teal;
-  font-weight: bold;
-  transition: opacity .5s ease;
-  svg {
-    fill: $color_teal;
-    width: 2.5rem;
-    height: 2.5rem;
-    position: relative;
-    animation: breath .75s alternate linear infinite;
-  }
-  &.hide{
-    opacity: 0;
-  }
-}
-
-@keyframes breath {
-    0% {
-        top: -6px;
-    }
-
-    50% {
-        top: 0px;
-    }
-
-    100% {
-        top: 6px;
-    }
-}
 </style>
-

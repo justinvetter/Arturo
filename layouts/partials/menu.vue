@@ -49,32 +49,19 @@ export default {
   },
 
   mounted() {
-      var menu, toggleButton, closeButton;
+    var menu, toggleButton, closeButton;
 
-      // Set Elements
-      menu = document.getElementById("slideout-menu");
-      toggleButton = document.getElementById("slideout-toggle");
-      closeButton = document.getElementById("slideout-close");
+    // Set Elements
+    menu = document.getElementById("slideout-menu");
+    toggleButton = document.getElementById("slideout-toggle");
+    closeButton = document.getElementById("slideout-close");
 
-      // Toggle Menu
-      toggleButton.addEventListener("click", function(e) {
-        e.preventDefault();
-        menu.classList.toggle("is-open");
-      });
-
-
-    window.onscroll = function(ev) {
-      var menu = document.getElementById('slideout-menu');
-    if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight - 300) {
-
-        menu.classList.add('hide')
-    } else {
-        menu.classList.remove('hide')
-    }
-};
+    // Toggle Menu
+    toggleButton.addEventListener("click", function(e) {
+      e.preventDefault();
+      menu.classList.toggle("is-open");
+    });
   },
-
-
 };
 </script>
 

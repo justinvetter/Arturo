@@ -1,5 +1,6 @@
 <template>
   <div>
+    <ScrollForMore/>
     <section class="bgImage bgImage-squish about fullHeight">
       <div class="background squish-image"></div>
       <article class="blue">
@@ -158,9 +159,11 @@
 </template>
 
 <script>
+import ScrollForMore from "@/components/ScrollForMore";
 import Footer from "@/layouts/partials/footer";
 export default {
   components: {
+    ScrollForMore,
     Footer
   },
   head() {
@@ -182,6 +185,7 @@ export default {
       function addEventHandlers() {
         window.addEventListener("scroll", checkPosition);
         window.addEventListener("resize", init);
+        checkPosition();
       }
       function checkPosition() {
         for (var i = 0; i < elems.length; i++) {

@@ -13,7 +13,7 @@
         <div class="card-right">
           <MediumIcon/>
           <h5 class="h__dkBlue">Subscribe to our blog on Medium</h5>
-          <a class="button" href="https://medium.com/@arturo.ai" target="_blank">/ visit blog</a>
+          <a class="button" href="https://medium.com/@arturo.ai" target="_blank">Visit Blog</a>
         </div>
       </div>
     </div>
@@ -36,7 +36,7 @@
         <div class="bottom-center">©2019 Arturo inc.</div>
         <div class="bottom-right">
           <SocialList class="social"/>
-          <nuxt-link to="/">Home</nuxt-link>//<nuxt-link to="about-us">About Us</nuxt-link>//<nuxt-link to="our-value">Our Value</nuxt-link>
+          <nuxt-link to="/">Home</nuxt-link>//<nuxt-link to="/about-us">About Us</nuxt-link>//<nuxt-link to="/our-value">Our Value</nuxt-link>
         </div>
       </div>
     </div>

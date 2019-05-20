@@ -60,13 +60,6 @@
 
 <script>
 export default {
-  head() {
-    return {
-      script: [
-        { src: 'https://static.zdassets.com/ekr/snippet.js?key=22b2c8b4-4219-4d06-8493-ff7f79619dc5', id: 'ze-snippet' }
-      ]
-    }
-  },
   data: function() {
     return {
       fName: "",

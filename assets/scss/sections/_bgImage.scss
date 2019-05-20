@@ -12,7 +12,11 @@
         position: absolute;
         z-index: 0;
         top: 0;
-        right: -80vw;
+        right: 0;
+
+        &__right {
+            left:0;
+        }
     }
 
     article {
@@ -21,8 +25,12 @@
         padding: 0 8rem;
         box-sizing: border-box;
         z-index: 10;
-        left: -80vw;
         position: absolute;
+        left: 0;
+
+        &__right {
+            right:0;
+        }
 
         &.blue {
             background-color: $color_blue;
@@ -39,18 +47,6 @@
         &>div {
             display: flex;
             height: 100%;
-        }
-    }
-
-    &__right {
-        .background {
-            left: -80vw;
-        }
-
-        article {
-            justify-self: flex-end;
-            margin-left: auto;
-            right: -80vw;
         }
     }
 
@@ -97,7 +93,7 @@
         }
 
         .number {
-            opacity: 0;
+            opacity: 1;
         }
     }
 
@@ -148,6 +144,33 @@
         }
     }
 
+
+    &.initialized {
+        .background {
+            right: -80vw;
+        }
+
+        article {
+            left: -80vw;
+        }
+
+        &__content {
+            .number {
+                opacity: 0;
+            }
+        }
+    }
+
+    &__right.initialized {
+        .background {
+            left: -80vw;
+        }
+        article {
+            justify-self: flex-end;
+            margin-left: auto;
+            right: -80vw;
+        }
+    }
 }
 
 #bgImage3{

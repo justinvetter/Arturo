@@ -144,7 +144,7 @@
             <p>We are growing rapidly and looking for talented, passionate, and driven individuals to join our diverse team. Are you passionate about Applied Machine Learning? Data Science? an Engineer who loves building highly scalable and efficient systems on AWS?</p>
             <p>
               Email us at
-              <a class="dkBlue" href="mailto:careers@arturo.ai">careers@arturo.ai</a> or check out our current openings at LinkedIn
+              <a class="dkBlue" href="mailto:careers@arturo.ai">careers@arturo.ai</a> or check out our current openings at LinkedIn.
             </p>
             <a
               class="button button__darkBlue"

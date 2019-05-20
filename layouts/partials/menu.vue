@@ -6,10 +6,10 @@
         <nuxt-link @click.native="toggleMenue" to="/">Home</nuxt-link>
       </li>
       <li>
-        <nuxt-link @click.native="toggleMenue" to="about-us">About Us</nuxt-link>
+        <nuxt-link @click.native="toggleMenue" to="/about-us">About Us</nuxt-link>
       </li>
       <li>
-        <nuxt-link @click.native="toggleMenue" to="our-value">Our Value</nuxt-link>
+        <nuxt-link @click.native="toggleMenue" to="/our-value">Our Value</nuxt-link>
       </li>
     </ul>
     <SocialList class="mobile-social" />

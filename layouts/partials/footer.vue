@@ -51,6 +51,9 @@ import SocialList from "@/components/SocialList";
 import Modal from "@/components/Modal";
 import { TweenMax, Elastic } from "gsap";
 
+var footer_menu_scene = null;
+var footer_scroll_scene = null;
+
 export default {
   components: {
     SocialList,
@@ -80,6 +83,28 @@ export default {
     this.$scrollmagic.addScene(
       scene2.setTween("footer .footer__bottom", { "margin-top": "0" })
     );
+
+    footer_menu_scene = this.$scrollmagic.scene({
+        triggerElement: 'footer',
+        triggerHook: 1,
+        reverse: true,
+    });
+    footer_menu_scene.setClassToggle('#slideout-menu', 'hide-from-footer');
+
+    this.$scrollmagic.addScene(footer_menu_scene);
+
+    footer_scroll_scene = this.$scrollmagic.scene({
+        triggerElement: 'footer',
+        triggerHook: 1,
+        reverse: true,
+    });
+    footer_scroll_scene.setClassToggle('#scroll', 'hide-from-footer');
+
+    this.$scrollmagic.addScene(footer_scroll_scene);
+  },
+  beforeDestroy() {
+    footer_menu_scene.removeClassToggle();
+    footer_scroll_scene.removeClassToggle();
   },
   methods: {
     show() {

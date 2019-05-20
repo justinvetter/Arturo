@@ -14,7 +14,7 @@
         display: none;
     }
 
-    &.hide {
+    &.hide, &.hide-from-footer {
         left: -750px;
     }
 
@@ -223,7 +223,7 @@
         transition: top .4s;
         flex-direction: column;
 
-        &.hide{
+        &.hide, &.hide-from-footer{
             left: 0;
         }
 

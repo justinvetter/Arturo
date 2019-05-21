@@ -142,14 +142,15 @@
           <div class="bgImage__content h__white">
             <h4>Careers</h4>
             <p>We are growing rapidly and looking for talented, passionate, and driven individuals to join our diverse team. Are you passionate about Applied Machine Learning? Data Science? an Engineer who loves building highly scalable and efficient systems on AWS?</p>
+            <p class="hiring-for" >We are currently hiring for:</p>
+            <ul class="positions-list" >
+              <li>Software Engineers</li>
+              <li>Front-end Developers</li>
+            </ul>
             <p>
               Email us at
-              <a class="dkBlue" href="mailto:careers@arturo.ai">careers@arturo.ai</a> or check out our current openings at LinkedIn.
+              <a class="dkBlue" href="mailto:careers@arturo.ai">careers@arturo.ai</a>.
             </p>
-            <a
-              class="button button__darkBlue"
-              href="http://www.linkedin.com/company/arturoai/about/"
-            >Visit LinkedIn</a>
           </div>
         </div>
       </article>
@@ -301,6 +302,10 @@ export default {
       display: none;
     }
   }
+}
+
+.positions-list {
+  list-style: disc;
 }
 </style>
 

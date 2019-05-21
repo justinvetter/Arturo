@@ -171,148 +171,140 @@ export default {
       if (scenes_created) {
         return;
       }
-      const bg2Background = _this.$scrollmagic.scene({
-        triggerElement: "#bgImage2 .background",
-        duration: 400
-      });
 
-      _this.$scrollmagic.addScene(
-        bg2Background.setTween("#bgImage2 .background", { left: 0 })
-      );
-
-      const bg2Article = _this.$scrollmagic.scene({
-        triggerElement: "#bgImage2 .background",
-        duration: 300,
-        triggerHook: 0.7
-      });
-
-      _this.$scrollmagic.addScene(
-        bg2Article.setTween("#bgImage2 article", { right: "0" })
-      );
-
-      const bg3Background = _this.$scrollmagic.scene({
-        triggerElement: "#bgImage3 .background",
-        duration: 400,
-        triggerHook: 0.5
-      });
-      _this.$scrollmagic.addScene(
-        bg3Background.setTween("#bgImage3 .background", { right: 0 })
-      );
-
+      //////////////////////
+      //BGimage Section 1//
+      /////////////////////
       const bg1Background = _this.$scrollmagic.scene({
         triggerElement: "#bgImage1 .background",
-        duration: 400,
         triggerHook: 1
       });
       _this.$scrollmagic.addScene(
-        bg1Background.setTween("#bgImage1 .background", { right: 0 })
+        bg1Background.setClassToggle("#bgImage1 .background", "on")
       );
-
       const bg1BackgroundOut = _this.$scrollmagic.scene({
         triggerElement: "#bgImage2 .background",
-        duration: 400,
         triggerHook: 0.5
       });
       _this.$scrollmagic.addScene(
-        bg1BackgroundOut.setTween("#bgImage1 .background", { right: "-80vw" })
+        bg1BackgroundOut.setClassToggle("#bgImage1 .background", "off")
       );
-
-      const bg2BackgroundOut = _this.$scrollmagic.scene({
-        triggerElement: "#bgImage3 .background",
-        duration: 400,
-        triggerHook: 0.5
-      });
-      _this.$scrollmagic.addScene(
-        bg2BackgroundOut.setTween("#bgImage2 .background", { left: "-80vw" })
-      );
-
       const bg1Article = _this.$scrollmagic.scene({
         triggerElement: "#bgImage1 .background",
-        duration: 300,
         triggerHook: 0.7
       });
-
       _this.$scrollmagic.addScene(
-        bg1Article.setTween("#bgImage1 article", { left: "0" })
+        bg1Article.setClassToggle("#bgImage1 article", "on")
       );
-
+      const bg1ArticleOut = _this.$scrollmagic.scene({
+        triggerElement: "#bgImage2 .background",
+        triggerHook: 0.5
+      });
+      _this.$scrollmagic.addScene(
+        bg1ArticleOut.setClassToggle("#bgImage1 article", "off")
+      );
+      const bg1Number = _this.$scrollmagic.scene({
+        triggerElement: "#bgImage1",
+        triggerHook: 0.45
+      });
+      _this.$scrollmagic.addScene(
+        bg1Number.setClassToggle("#bgImage1 .number", "reveal-text")
+      );
+      const bg1article = _this.$scrollmagic.scene({
+        triggerElement: "#bgImage1",
+        triggerHook: 0.35
+      });
+      _this.$scrollmagic.addScene(bg1article.setClassToggle("#bgImage1 h4", "in"));
+      //////////////////////
+      //BGimage Section 2//
+      /////////////////////
+      const bg2Background = _this.$scrollmagic.scene({
+        triggerElement: "#bgImage2 .background",
+      });
+      _this.$scrollmagic.addScene(
+        bg2Background.setClassToggle("#bgImage2 .background", "on")
+      );
+      const bg2BackgroundOut = _this.$scrollmagic.scene({
+        triggerElement: "#bgImage3 .background",
+        triggerHook: 0.5
+      });
+      _this.$scrollmagic.addScene(
+        bg2BackgroundOut.setClassToggle("#bgImage2 .background", "off")
+      );
+      const bg2Article = _this.$scrollmagic.scene({
+        triggerElement: "#bgImage2 .background",
+        triggerHook: 0.5
+      });
+      _this.$scrollmagic.addScene(
+        bg2Article.setClassToggle("#bgImage2 article", "on")
+      );
+      const bg2ArticleOut = _this.$scrollmagic.scene({
+        triggerElement: "#bgImage3 .background",
+        triggerHook: 0.5
+      });
+      _this.$scrollmagic.addScene(
+        bg2ArticleOut.setClassToggle("#bgImage2 article", "off")
+      );
+      const bg2Number = _this.$scrollmagic.scene({
+        triggerElement: "#bgImage2",
+        triggerHook: 0.5
+      });
+      _this.$scrollmagic.addScene(
+        bg2Number.setClassToggle("#bgImage2 .number", "reveal-text")
+      );
+      const bg2article = _this.$scrollmagic.scene({
+        triggerElement: "#bgImage2",
+        triggerHook: 0.35
+      });
+      _this.$scrollmagic.addScene(bg2article.setClassToggle("#bgImage2 h4", "in"));
+      //////////////////////
+      //BGimage Section 3//
+      /////////////////////
+      const bg3Background = _this.$scrollmagic.scene({
+        triggerElement: "#bgImage3 .background",
+        triggerHook: 0.5
+      });
+      _this.$scrollmagic.addScene(
+        bg3Background.setClassToggle("#bgImage3 .background", "on")
+      );
       const bg3Article = _this.$scrollmagic.scene({
         triggerElement: "#bgImage3 .background",
-        duration: 300,
         triggerHook: 0.7
       });
-
       _this.$scrollmagic.addScene(
-        bg3Article.setTween("#bgImage3 article", { left: "0" })
+        bg3Article.setClassToggle("#bgImage3 article", "on")
       );
-
-      const logos = _this.$scrollmagic.scene({
-        triggerElement: "#logos",
-        triggerHook: "onLeave",
-        reverse: true
+      const bg3Number = _this.$scrollmagic.scene({
+        triggerElement: "#bgImage3",
+        triggerHook: 0.5
       });
-
       _this.$scrollmagic.addScene(
-        logos.setPin("#logos", { pushFollowers: false })
+        bg3Number.setClassToggle("#bgImage3 .number", "reveal-text")
       );
-
+      const bg3article = _this.$scrollmagic.scene({
+        triggerElement: "#bgImage3",
+        triggerHook: 0.3
+      });
+      _this.$scrollmagic.addScene(bg3article.setClassToggle("#bgImage3 h4", "in"));
       const bg3pin = _this.$scrollmagic.scene({
         triggerElement: "#bgImage3",
         triggerHook: "onLeave",
         reverse: true
       });
-
       _this.$scrollmagic.addScene(
         bg3pin.setPin("#bgImage3", { pushFollowers: false })
       );
-
-      const bg1Number = _this.$scrollmagic.scene({
-        triggerElement: "#bgImage1",
-        triggerHook: 0.35
+      /////////
+      //Logos//
+      /////////
+      const logos = _this.$scrollmagic.scene({
+        triggerElement: "#logos",
+        triggerHook: "onLeave",
+        reverse: true
       });
-
       _this.$scrollmagic.addScene(
-        bg1Number.setClassToggle("#bgImage1 .number", "reveal-text")
+        logos.setPin("#logos", { pushFollowers: false })
       );
-
-      const bg2Number = _this.$scrollmagic.scene({
-        triggerElement: "#bgImage2",
-        triggerHook: 0.35
-      });
-
-      _this.$scrollmagic.addScene(
-        bg2Number.setClassToggle("#bgImage2 .number", "reveal-text")
-      );
-
-      const bg3Number = _this.$scrollmagic.scene({
-        triggerElement: "#bgImage3",
-        triggerHook: 0.35
-      });
-
-      _this.$scrollmagic.addScene(
-        bg3Number.setClassToggle("#bgImage3 .number", "reveal-text")
-      );
-
-      const bg1article = _this.$scrollmagic.scene({
-        triggerElement: "#bgImage1",
-        triggerHook: 0.25
-      });
-
-      _this.$scrollmagic.addScene(bg1article.setClassToggle("#bgImage1 h4", "in"));
-
-      const bg2article = _this.$scrollmagic.scene({
-        triggerElement: "#bgImage2",
-        triggerHook: 0.25
-      });
-
-      _this.$scrollmagic.addScene(bg2article.setClassToggle("#bgImage2 h4", "in"));
-
-      const bg3article = _this.$scrollmagic.scene({
-        triggerElement: "#bgImage3",
-        triggerHook: 0.25
-      });
-
-      _this.$scrollmagic.addScene(bg3article.setClassToggle("#bgImage3 h4", "in"));
 
       let elem_bgImage1 = document.getElementById('bgImage1');
       if (elem_bgImage1)

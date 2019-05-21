@@ -12,10 +12,14 @@
         position: absolute;
         z-index: 0;
         top: 0;
-        right: 0;
+        right: -80vw;
+        transition: right 1s ease;
+        &.on{
+            right: 0;
+        }
 
-        &__right {
-            left:0;
+        &.off{
+            right: -80vw;
         }
     }
 
@@ -25,11 +29,15 @@
         padding: 0 8rem;
         box-sizing: border-box;
         z-index: 10;
+        left: -80vw;
         position: absolute;
-        left: 0;
+        transition: left 1s ease;
+        &.on{
+            left: 0;
+        }
 
-        &__right {
-            right:0;
+        &.off{
+            left: -80vw;
         }
 
         &.blue {
@@ -47,6 +55,34 @@
         &>div {
             display: flex;
             height: 100%;
+        }
+    }
+
+    &__right {
+        .background {
+            left: -80vw;
+            transition: left 1s ease;
+            &.on{
+                left: 0;
+            }
+
+            &.off{
+                left: -80vw;
+            }
+        }
+
+        article {
+            justify-self: flex-end;
+            margin-left: auto;
+            right: -80vw;
+            transition: right 1s ease;
+            &.on{
+                right: 0;
+            }
+
+            &.off{
+                right: -80vw;
+            }
         }
     }
 
@@ -93,7 +129,7 @@
         }
 
         .number {
-            opacity: 1;
+            opacity: 0;
         }
     }
 
@@ -144,33 +180,6 @@
         }
     }
 
-
-    &.initialized {
-        .background {
-            right: -80vw;
-        }
-
-        article {
-            left: -80vw;
-        }
-
-        &__content {
-            .number {
-                opacity: 0;
-            }
-        }
-    }
-
-    &__right.initialized {
-        .background {
-            left: -80vw;
-        }
-        article {
-            justify-self: flex-end;
-            margin-left: auto;
-            right: -80vw;
-        }
-    }
 }
 
 #bgImage3{

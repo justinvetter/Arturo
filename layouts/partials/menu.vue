@@ -41,16 +41,12 @@ export default {
       menu.classList.toggle("is-open");
     }
   },
-
-
   components:{
     ArturoMark,
     SocialList
   },
-
   mounted() {
     var menu, toggleButton, closeButton;
-
     // Set Elements
     menu = document.getElementById("slideout-menu");
     toggleButton = document.getElementById("slideout-toggle");
@@ -59,9 +55,22 @@ export default {
     // Toggle Menu
     toggleButton.addEventListener("click", function(e) {
       e.preventDefault();
+      if (!menu) return;
       menu.classList.toggle("is-open");
     });
   },
+  watch: {
+    $route() {
+      let menu = document.getElementById("slideout-menu");
+      if (menu) {
+        menu.classList.remove('hide-from-footer');
+      }
+      let scroll = document.getElementById("scroll");
+      if (scroll) {
+        scroll.classList.remove('hide-from-footer');
+      }
+    }
+  }
 };
 </script>
 

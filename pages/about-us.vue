@@ -144,8 +144,12 @@
             <p>We are growing rapidly and looking for talented, passionate, and driven individuals to join our diverse team. Are you passionate about Applied Machine Learning? Data Science? an Engineer who loves building highly scalable and efficient systems on AWS?</p>
             <p class="hiring-for" >We are currently hiring for:</p>
             <ul class="positions-list" >
-              <li>Software Engineers</li>
-              <li>Front-end Developers</li>
+              <li>
+                <a href="/softwareEngineerApril2019.pdf" >Software Engineers</a>
+              </li>
+              <li>
+                <a href="/frontEndDeveloperApril2019.pdf" >Front-end Developers</a>
+              </li>
             </ul>
             <p>
               Email us at
@@ -303,9 +307,15 @@ export default {
     }
   }
 }
-
+.hiring-for {
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
 .positions-list {
   list-style: disc;
+}
+.positions-list > li {
+  padding: 0.4vh;
 }
 </style>
 

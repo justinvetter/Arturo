@@ -8,7 +8,7 @@
           <br>We just need some basic information.
         </p>
         <!-- our signup form ===================== -->
-        <form id="signup-form" @submit.prevent="processForm">
+        <form id="signup-form" method="POST" action="https://uuzev2ujgk.execute-api.us-east-1.amazonaws.com/Prod/request-a-demo" >
           <!-- name -->
           <div class="field">
             <label class="label">First Name</label>

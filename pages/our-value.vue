@@ -238,7 +238,7 @@ export default {
     box-sizing: border-box;
   }
 
-  @media (max-width: 1315px) {
+  @media (max-width: 1476px) {
     .card {
       width: 90%;
       div {

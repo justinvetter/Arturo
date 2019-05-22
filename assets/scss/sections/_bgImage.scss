@@ -12,15 +12,8 @@
         position: absolute;
         z-index: 0;
         top: 0;
-        right: -80vw;
+        right: 0;
         transition: right 1s ease;
-        &.on{
-            right: 0;
-        }
-
-        &.off{
-            right: -80vw;
-        }
     }
 
     article {
@@ -29,16 +22,8 @@
         padding: 0 8rem;
         box-sizing: border-box;
         z-index: 10;
-        left: -80vw;
         position: absolute;
         transition: left 1s ease;
-        &.on{
-            left: 0;
-        }
-
-        &.off{
-            left: -80vw;
-        }
 
         &.blue {
             background-color: $color_blue;
@@ -60,29 +45,15 @@
 
     &__right {
         .background {
-            left: -80vw;
             transition: left 1s ease;
-            &.on{
-                left: 0;
-            }
-
-            &.off{
-                left: -80vw;
-            }
+            left: 0;
         }
 
         article {
             justify-self: flex-end;
             margin-left: auto;
-            right: -80vw;
             transition: right 1s ease;
-            &.on{
-                right: 0;
-            }
-
-            &.off{
-                right: -80vw;
-            }
+            right: 0;
         }
     }
 
@@ -116,20 +87,14 @@
             padding-bottom: 1rem;
             padding-right: 1rem;
             position: relative;
-
             &:last-child {
-                transform: translateX(-120%);
+                transform: translateX(0);
                 transition: all .5s ease;
-            }
-            &.in{
-                &:last-child{
-                    transform: translateX(0);
-                }
             }
         }
 
         .number {
-            opacity: 0;
+            opacity: 1;
         }
     }
 
@@ -180,6 +145,76 @@
         }
     }
 
+
+    &.initialized {
+        .background {
+            right: -80vw;
+
+            &.on {
+                right: 0;
+            }
+
+            &.off {
+                right: -80vw;
+            }
+        }
+
+        article {
+            left: -80vw;
+
+            &.on{
+                left: 0;
+            }
+
+            &.off {
+                left: -80vw;
+            }
+        }
+    }
+
+    &__right.initialized {
+        .background {
+            left: -80vw;
+            &.on{
+                left: 0;
+            }
+
+            &.off{
+                left: -80vw;
+            }
+        }
+
+        article {
+            right: -80vw;
+            &.on {
+                right: 0;
+            }
+
+            &.off{
+                right: -80vw;
+            }
+        }
+    }
+
+
+
+    &.initialized &__content {
+        h4 {
+            &:last-child {
+                transform: translateX(-120%);
+                transition: all .5s ease;
+            }
+            &.in {
+                &:last-child{
+                    transform: translateX(0);
+                }
+            }
+        }
+
+        .number {
+            opacity: 0;
+        }
+    }
 }
 
 #bgImage3{

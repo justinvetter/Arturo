@@ -337,7 +337,7 @@ export default {
   height: 75vh;
 }
 .counting {
-  height: 25vh;
+  /*height: 25vh;*/
 }
 
 #bgImage1 {

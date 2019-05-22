@@ -152,7 +152,7 @@ export default {
 <style lang="scss" scoped>
     .counting {
       display: flex;
-      height: 25vh;
+      /*height: 25vh;*/
       width: 100%;
       padding: 5vh 2vh 5vh 70px; // sidemenu style
       box-sizing: border-box;
@@ -208,7 +208,8 @@ export default {
         align-items: center;
         justify-content: center;
         margin-top: 1rem;
-        height: 20vh;
+        padding: 2vh 2vh 5vh;
+        /*height: 20vh;*/
 
         #countPhrase {
           width: 100%;

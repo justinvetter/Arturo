@@ -45,7 +45,7 @@
               03
               <span>/03</span>
             </h4>
-            <h4>Analysis for developing countries enabling creation of new markets</h4>
+            <h4>Analysis that can expand to developing countries enabling creation of new markets</h4>
           </div>
         </div>
       </article>

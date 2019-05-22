@@ -19,7 +19,7 @@
           <h5 class="card__title vertText h__white">About Us</h5>
           <div class="card__content h__white">
             <h4>Our story</h4>
-            <p>Arturo products represents a 3+ year investment and Research and Development inside a Top 20 US Insurance carrier and a team with intimate knowledge of the problem- space, a strong track record of successful execution, and relentless commitment to delivering real value to our customers.</p>
+            <p>Arturo products represents a 3+ year investment and Research and Development inside American Family Insurance.</p>
             <p>We’re passionate about eliminating the complexity of extracting insights from ensemble data sets and specialize in being able to deliver accurate predictions in formats that are immediately useful inside our customer’s business systems.</p>
           </div>
         </div>
@@ -141,19 +141,11 @@
           <h5 class="bgImage__title vertText h__white">About Us</h5>
           <div class="bgImage__content h__white">
             <h4>Careers</h4>
-            <p>We are growing rapidly and looking for talented, passionate, and driven individuals to join our diverse team. Are you passionate about Applied Machine Learning? Data Science? an Engineer who loves building highly scalable and efficient systems on AWS?</p>
-            <p class="hiring-for" >We are currently hiring for:</p>
-            <ul class="positions-list" >
-              <li>
-                <a href="/softwareEngineerApril2019.pdf" >Software Engineers</a>
-              </li>
-              <li>
-                <a href="/frontEndDeveloperApril2019.pdf" >Front-end Developers</a>
-              </li>
-            </ul>
+            <p class="careers-message" >We are growing rapidly and looking for talented, passionate, and driven individuals to join our diverse team. Are you passionate about Applied Machine Learning? Data Science? an Engineer who loves building highly scalable and efficient systems on AWS?</p>
+            <p class="careers-message" >We are currently hiring <a class="job-posting" href="/softwareEngineerApril2019.pdf" >Software Engineers</a> and <a class="job-posting" href="/frontEndDeveloperApril2019.pdf" >Front-end Developers.</a></p>
             <p>
               Email us at
-              <a class="dkBlue" href="mailto:careers@arturo.ai">careers@arturo.ai</a>.
+              <a class="dkBlue careers-link" href="mailto:careers@arturo.ai">careers@arturo.ai</a>.
             </p>
           </div>
         </div>
@@ -307,15 +299,16 @@ export default {
     }
   }
 }
-.hiring-for {
+p.careers-message {
   padding-bottom: 0;
-  margin-bottom: 0;
 }
-.positions-list {
-  list-style: disc;
+.job-posting {
+  padding-bottom: 0.4vh;
+  border-bottom: 1px solid white;
 }
-.positions-list > li {
-  padding: 0.4vh;
+.careers-link {
+  text-decoration: none;
+  color: inherit;
 }
 </style>
 

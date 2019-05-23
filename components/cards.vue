@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <section class="cards cards__right fullHeight card1">
+  <div id="cards-container" >
+    <section class="cards cards__right fullHeight card1 animated hide">
       <div class="image"></div>
       <article class="card card__blue">
         <div class="articleOne">
@@ -40,119 +40,200 @@
         </div>
       </article>
     </section>
+    <section class="cards cards__right fullHeight card1 unanimated">
+      <div class="image"></div>
+      <article class="card card__blue">
+        <div class="articleOne">
+          <h5 class="card__title vertText h__white">WHY WE’RE BETTER</h5>
+          <div class="card__content h__white">
+            <h4>
+              01
+              <span>/03</span>
+            </h4>
+            <h4>Transparency</h4>
+            <p>We constantly assess our model’s performance and publish our performance metrics.</p>
+            <!-- temporarily removing till blog details are up
+            <a class="button button__white button__white-blue" href="#">/Link</a>
+            -->
+          </div>
+        </div>
+      </article>
+    </section>
+    <section class="cards cards__right fullHeight card1 unanimated">
+      <div class="image image__two"></div>
+      <article class="card card__red">
+        <div class="articleTwo">
+          <h5 class="card__title vertText h__white">WHY WE’RE BETTER</h5>
+          <div class="card__content h__white">
+            <h4>02
+              <span>/03</span>
+            </h4>
+            <h4>Full-loop™ deep learning</h4>
+            <p>Our proprietary deep learning methodology doesn’t end with a model’s output, but harnesses feedback loops to automatically improve quality and performance over time.</p>
+          </div>
+        </div>
+      </article>
+    </section>
+    <section class="cards cards__right fullHeight card1 unanimated">
+      <div class="image image__three"></div>
+      <article class="card card__ltBlue">
+        <div class="articleThree">
+          <h5 class="card__title vertText h__white">WHY WE’RE BETTER</h5>
+          <div class="card__content h__white">
+            <h4>
+              03
+              <span>/03</span>
+            </h4>
+            <h4>Access to exclusive proprietary data sources</h4>
+            <p>We have access to proprietary and exclusive data no other providers have.</p>
+          </div>
+        </div>
+      </article>
+    </section>
   </div>
 </template>
 
 <script>
 export default {
   mounted() {
-    const cardPin = this.$scrollmagic.scene({
-      triggerElement: ".cards",
-      triggerHook: "onLeave",
-      reverse: true,
-      duration: 3000
-    });
+    const _this = this;
+    let scenes_created__cards = false;
+    function createScenes_cards() {
 
-    /// Blue Card
+      const unanimated_sections = document.querySelectorAll('section.cards.unanimated');
+      for (let i = 0; i < unanimated_sections.length; i++) {
+        unanimated_sections[i].classList.add('hide');
+      }
 
-    this.$scrollmagic.addScene(
-      cardPin.setPin(".cards", { pushFollowers: true })
-    );
+      const animated_sections = document.querySelectorAll('section.cards.animated');
+      for (let i = 0; i < animated_sections.length; i++) {
+        animated_sections[i].classList.remove('hide');
+      }
 
-    const backgroundChange0 = this.$scrollmagic.scene({
-      triggerElement: ".cards",
-      triggerHook: "0",
-      reverse: true,
-      duration: 1000
-    });
-    this.$scrollmagic.addScene(
-      backgroundChange0
-        .setClassToggle(".cards .card", "card__blue")
-    );
+      const cards_container = document.getElementById('cards-container');
+      if (cards_container) {
+        cards_container.classList.add('initialized');
+      }
 
-    const article0 = this.$scrollmagic.scene({
-      triggerElement: ".cards",
-      triggerHook: "0",
-      reverse: true,
-      offset: 1000
-    });
-    this.$scrollmagic.addScene(
-      article0
-        .setClassToggle(".articleOne", "hide")
-    );
+      
+      const cardPin = _this.$scrollmagic.scene({
+        triggerElement: ".cards",
+        triggerHook: "onLeave",
+        reverse: true,
+        duration: 3000
+      });
 
-    /// Red Card
+      /// Blue Card
 
-    const backgroundChange1 = this.$scrollmagic.scene({
-      triggerElement: ".cards",
-      triggerHook: "0",
-      reverse: true,
-      offset: 1000,
-      duration: 1000
-    });
-    this.$scrollmagic.addScene(
-      backgroundChange1
-        .setClassToggle(".cards .card", "card__red")
-    );
+      _this.$scrollmagic.addScene(
+        cardPin.setPin(".cards", { pushFollowers: true })
+      );
 
-    const imageChange1 = this.$scrollmagic.scene({
-      triggerElement: ".cards",
-      triggerHook: "0",
-      reverse: true,
-      offset: 1000,
-      duration: 1000
-    });
-    this.$scrollmagic.addScene(
-      imageChange1
-        .setClassToggle(".cards .image", "image__two")
-    );
+      const backgroundChange0 = _this.$scrollmagic.scene({
+        triggerElement: ".cards",
+        triggerHook: "0",
+        reverse: true,
+        duration: 1000
+      });
+      _this.$scrollmagic.addScene(
+        backgroundChange0
+          .setClassToggle(".cards .card", "card__blue")
+      );
 
-    const article1 = this.$scrollmagic.scene({
-      triggerElement: ".cards",
-      triggerHook: "0",
-      reverse: true,
-      offset: 1000,
-      duration: 1000
-    });
-    this.$scrollmagic.addScene(
-      article1
-        .setClassToggle(".articleTwo", "hide__nohide")
-    );
+      const article0 = _this.$scrollmagic.scene({
+        triggerElement: ".cards",
+        triggerHook: "0",
+        reverse: true,
+        offset: 1000
+      });
+      _this.$scrollmagic.addScene(
+        article0
+          .setClassToggle(".articleOne", "hide")
+      );
 
-    /// Light Blue Card
+      /// Red Card
 
-    const backgroundChange2 = this.$scrollmagic.scene({
-      triggerElement: ".cards",
-      triggerHook: "0",
-      reverse: true,
-      offset: 2000
-    });
-    this.$scrollmagic.addScene(
-      backgroundChange2
-        .setClassToggle(".cards .card", "card__ltBlue")
-    );
+      const backgroundChange1 = _this.$scrollmagic.scene({
+        triggerElement: ".cards",
+        triggerHook: "0",
+        reverse: true,
+        offset: 1000,
+        duration: 1000
+      });
+      _this.$scrollmagic.addScene(
+        backgroundChange1
+          .setClassToggle(".cards .card", "card__red")
+      );
 
-    const imageChange2 = this.$scrollmagic.scene({
-      triggerElement: ".cards",
-      triggerHook: "0",
-      reverse: true,
-      offset: 2000
-    });
-    this.$scrollmagic.addScene(
-      imageChange2
-        .setClassToggle(".cards .image", "image__three")
-    );
+      const imageChange1 = _this.$scrollmagic.scene({
+        triggerElement: ".cards",
+        triggerHook: "0",
+        reverse: true,
+        offset: 1000,
+        duration: 1000
+      });
+      _this.$scrollmagic.addScene(
+        imageChange1
+          .setClassToggle(".cards .image", "image__two")
+      );
 
-    const article2 = this.$scrollmagic.scene({
-      triggerElement: ".cards",
-      triggerHook: "0",
-      reverse: true,
-      offset: 2000
-    });
-    this.$scrollmagic.addScene(
-      article2
-        .setClassToggle(".articleThree", "hide__nohide")
-    );
+      const article1 = _this.$scrollmagic.scene({
+        triggerElement: ".cards",
+        triggerHook: "0",
+        reverse: true,
+        offset: 1000,
+        duration: 1000
+      });
+      _this.$scrollmagic.addScene(
+        article1
+          .setClassToggle(".articleTwo", "hide__nohide")
+      );
+
+      /// Light Blue Card
+
+      const backgroundChange2 = _this.$scrollmagic.scene({
+        triggerElement: ".cards",
+        triggerHook: "0",
+        reverse: true,
+        offset: 2000
+      });
+      _this.$scrollmagic.addScene(
+        backgroundChange2
+          .setClassToggle(".cards .card", "card__ltBlue")
+      );
+
+      const imageChange2 = _this.$scrollmagic.scene({
+        triggerElement: ".cards",
+        triggerHook: "0",
+        reverse: true,
+        offset: 2000
+      });
+      _this.$scrollmagic.addScene(
+        imageChange2
+          .setClassToggle(".cards .image", "image__three")
+      );
+
+      const article2 = _this.$scrollmagic.scene({
+        triggerElement: ".cards",
+        triggerHook: "0",
+        reverse: true,
+        offset: 2000
+      });
+      _this.$scrollmagic.addScene(
+        article2
+          .setClassToggle(".articleThree", "hide__nohide")
+      );
+    }
+
+    const react_to_scroll__cards = function() {
+      if (!scenes_created__cards) {
+          createScenes_cards();
+          scenes_created__cards = true;
+          window.removeEventListener('scroll', react_to_scroll__cards, false);
+      }
+    }
+
+    window.addEventListener('scroll', react_to_scroll__cards, false);
   }
 };
 </script>

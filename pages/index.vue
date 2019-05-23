@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="main-container" >
     <ScrollForMore/>
     <Hero/>
 
@@ -306,17 +306,9 @@ export default {
         logos.setPin("#logos", { pushFollowers: false })
       );
 
-      let elem_bgImage1 = document.getElementById('bgImage1');
-      if (elem_bgImage1)
-        elem_bgImage1.classList.add('initialized');
-
-      let elem_bgImage2 = document.getElementById('bgImage2');
-      if (elem_bgImage2)
-        elem_bgImage2.classList.add('initialized');
-
-      let elem_bgImage3 = document.getElementById('bgImage3');
-      if (elem_bgImage3)
-        elem_bgImage3.classList.add('initialized');
+      let main_container = document.getElementById('main-container');
+      if (main_container)
+        main_container.classList.add('initialized');
     }
 
     const react_to_scroll = function() {

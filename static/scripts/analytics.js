@@ -2,6 +2,7 @@ var _paq = window._paq || [];
 _paq.push(['trackPageView']);
 _paq.push(['enableLinkTracking']);
 (function() {
+  console.log('Enabling Matomo');
   var u="https://arturoai.matomo.cloud/";
   _paq.push(['setTrackerUrl', u+'matomo.php']);
   _paq.push(['setSiteId', '1']);

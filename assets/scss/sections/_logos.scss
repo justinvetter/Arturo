@@ -3,7 +3,6 @@
     justify-content: center;
     align-items: center;
     color: $color_teal;
-    margin-bottom: 50em;
 
     article {
         border: solid 2px $color_teal;
@@ -117,5 +116,11 @@
                 transform: scale(.5, .5)
             }
         }
+    }
+}
+
+.initialized {
+    .logos {
+        margin-bottom: 50em;
     }
 }

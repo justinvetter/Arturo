@@ -26,6 +26,7 @@ export default {
       var refresh_interval = 900000; // milliseconds - set to 900,000 - 15 minutes
 
       const getCount = function () {
+        console.log('Get Count');
         // vanilla JS
         let xhr = new XMLHttpRequest();
         xhr.open('GET', '/_metrics/metrics.json');
@@ -34,7 +35,9 @@ export default {
           let DONE = 4; // readyState 4 means the request is done.
           let OK = 200; // status 200 is a successful return.
           if (xhr.readyState === DONE) {
+            console.log('Count response');
             if (xhr.status === OK) {
+              console.log('Count response good');
               let response_body = JSON.parse(xhr.responseText);
               current_count = response_body && response_body['inference_count'] ? response_body['inference_count'] : 0;
               console.log(xhr.responseText); // 'This is the returned text.'
@@ -52,6 +55,7 @@ export default {
       }
 
       function fitTextToContainer(str) {
+        console.log('fitTextToContainer');
         if (str.length === previous_length) {
           return;
         }
@@ -117,6 +121,7 @@ export default {
       }
       
       function animateValue(id, start, end, duration) {
+        console.log('animateValue');
         var obj = document.getElementById(id);
         var range = end - start;
         var minTimer = 50;
@@ -142,9 +147,10 @@ export default {
         timer = setInterval(run, stepTime);
         run();
       }
-      window.addEventListener('resize', fitTextToContainer, false);
       getCount();
       setInterval(getCount, refresh_interval);
+      console.log('Listening to resize');
+      window.addEventListener('resize', fitTextToContainer, false);
     }
 }
 </script>
@@ -214,14 +220,14 @@ export default {
         #countPhrase {
           width: 100%;
           justify-content: center;
-          padding-bottom: 1rem;
+          padding: 0 0 5vh 0;
           font-size: em(20);
         }
 
         #countPhraseWrapper {
           width: auto;
           text-align: center;
-          padding-top:2.2vh;
+          padding-top: 2.2vh;
         }
 
         #countUp {
@@ -230,7 +236,7 @@ export default {
           border-top: solid 2px $color_teal;
           margin-left: 0;
           padding-left: 0;
-          padding-top: .5rem;
+          padding-top: 2.5vh;
           font-size: em(100);
         }
       }

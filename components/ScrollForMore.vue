@@ -51,10 +51,11 @@
         bottom: 0;
         z-index: 999;
         left: 50%;
-        margin-left: -2rem;
         color: $color_teal;
         font-weight: bold;
         transition: opacity .5s ease;
+        transform: translateX(-50%);
+
         svg {
             fill: $color_teal;
             width: 2.5rem;

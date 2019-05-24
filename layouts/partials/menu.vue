@@ -34,6 +34,9 @@
 import ArturoMark from '@/components/icons/arturo_white_mark.svg?inline';
 import SocialList from '@/components/SocialList';
 
+const interaction_debounce = 300;
+var timestamp = 0;
+
 export default {
   methods: {
     toggleMenue: function () {
@@ -46,17 +49,28 @@ export default {
     SocialList
   },
   mounted() {
+    var after_interact = function (e) {
+      console.log('Toggle button clicked');
+      e.preventDefault();
+      let c_time = new Date().getTime();
+      if (c_time - interaction_debounce <= timestamp) {
+        return;
+      }
+      timestamp = c_time;
+      if (!menu) return;
+      menu.classList.toggle("is-open");
+    }
+    console.log('Menu mounted');
     var menu, toggleButton, closeButton;
     // Set Elements
     menu = document.getElementById("slideout-menu");
     toggleButton = document.getElementById("slideout-toggle");
     closeButton = document.getElementById("slideout-close");
 
+    timestamp = new Date().getTime();
+
     // Toggle Menu
     toggleButton.addEventListener("click", function(e) {
-      e.preventDefault();
-      if (!menu) return;
-      menu.classList.toggle("is-open");
     });
   },
   watch: {

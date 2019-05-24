@@ -40,7 +40,7 @@
         </div>
       </article>
     </section>
-    <section class="cards cards__right fullHeight card1 unanimated">
+    <section class="cards cards__right card1 unanimated">
       <div class="image"></div>
       <article class="card card__blue">
         <div class="articleOne">
@@ -59,7 +59,7 @@
         </div>
       </article>
     </section>
-    <section class="cards cards__right fullHeight card1 unanimated">
+    <section class="cards cards__right card1 unanimated">
       <div class="image image__two"></div>
       <article class="card card__red">
         <div class="articleTwo">
@@ -74,7 +74,7 @@
         </div>
       </article>
     </section>
-    <section class="cards cards__right fullHeight card1 unanimated">
+    <section class="cards cards__right card1 unanimated">
       <div class="image image__three"></div>
       <article class="card card__ltBlue">
         <div class="articleThree">

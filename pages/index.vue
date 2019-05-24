@@ -142,39 +142,30 @@ export default {
     window._paq.push(['setDocumentTitle', 'Home Page']);
     window._paq.push(['trackPageView']);
     const _this = this;
-    // Shows/Hides the "Scroll for more" widget
+    var scenes_created = false;
+
+    function initialize_fade_in_elements() {
+        let marked = document.querySelectorAll(".mark-for-fade-in");
+        for (let i = 0; i < marked.length; i++) {
+          marked[i].classList.replace('mark-for-fade-in', 'hidden');
+        }
+    }
+
+    // Shows/Hides fade-in elements
     var animateHTML = function() {
-      var elems;
-      var windowHeight;
-      function init() {
-        elems = document.querySelectorAll(".hidden");
-        windowHeight = window.innerHeight;
-        addEventHandlers();
-        checkPosition();
-      }
-      function addEventHandlers() {
-        window.addEventListener("scroll", checkPosition);
-        window.addEventListener("resize", init);
-        checkPosition();
-      }
-      function checkPosition() {
-        for (var i = 0; i < elems.length; i++) {
-          var positionFromTop = elems[i].getBoundingClientRect().top;
-          if (positionFromTop - windowHeight <= -250) {
-            elems[i].className = elems[i].className.replace(
-              "hidden",
-              "fade-in-element"
-            );
-          }
+      var elems = document.querySelectorAll(".hidden");
+      var windowHeight = window.innerHeight;
+      for (var i = 0; i < elems.length; i++) {
+        var positionFromTop = elems[i].getBoundingClientRect().top;
+        if (positionFromTop - windowHeight <= -250) {
+          elems[i].className = elems[i].className.replace(
+            "hidden",
+            "fade-in-element"
+          );
         }
       }
-      return {
-        init: init
-      };
     };
-    animateHTML().init();
 
-    var scenes_created = false;
     function createScenes() {
       if (scenes_created) {
         return;
@@ -323,11 +314,13 @@ export default {
       if (!scenes_created) {
           createScenes();
           scenes_created = true;
-          window.removeEventListener('scroll', react_to_scroll, false);
       }
+      animateHTML();
     }
 
+    initialize_fade_in_elements();
     window.addEventListener('scroll', react_to_scroll, false);
+    window.addEventListener('resize', animateHTML, false);
   }
 };
 </script>

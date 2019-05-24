@@ -70,8 +70,8 @@ export default {
     timestamp = new Date().getTime();
 
     // Toggle Menu
-    toggleButton.addEventListener("click", function(e) {
-    });
+    toggleButton.addEventListener("click", after_interact, true);
+    toggleButton.addEventListener("touchend", after_interact, true);
   },
   watch: {
     $route() {

@@ -163,6 +163,12 @@ export default {
     ScrollForMore,
     Footer
   },
+  name: 'About Us | Arturo',
+  created() {
+    window._paq.push(['setCustomUrl', '/' + window.location.hash.substr(1)]);
+    window._paq.push(['setDocumentTitle', 'About Us Page']);
+    window._paq.push(['trackPageView']);
+  },
   head() {
     return {
       title: "About Us | Arturo",

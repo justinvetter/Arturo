@@ -38,12 +38,11 @@ export default {
   /*
   ** Plugins to load before mounting the App
   */
-  plugins: [{
-    src: '~plugins/vue-scrollmagic.js',
-    ssr: false
-  }, {
-    src: '~plugins/vue-js-modal',
-  }],
+  plugins: [
+    { src: '~plugins/vue-scrollmagic.js', ssr: false },
+    { src: '~plugins/vue-js-modal'},
+    { src: '~plugins/vue-matomo.js', ssr: false }
+  ],
 
   /*
   ** Nuxt.js modules

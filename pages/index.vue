@@ -131,12 +131,6 @@ export default {
     Hero,
     Counting
   },
-  name: 'Arturo',
-  created() {
-    window._paq.push(['setCustomUrl', '/' + window.location.hash.substr(1)]);
-    window._paq.push(['setDocumentTitle', 'Home Page']);
-    window._paq.push(['trackPageView']);
-  },
   head() {
     return {
       title: "Arturo",
@@ -144,6 +138,9 @@ export default {
     };
   },
   mounted() {
+    window._paq.push(['setCustomUrl', '/' + window.location.hash.substr(1)]);
+    window._paq.push(['setDocumentTitle', 'Home Page']);
+    window._paq.push(['trackPageView']);
     const _this = this;
     // Shows/Hides the "Scroll for more" widget
     var animateHTML = function() {

@@ -77,7 +77,7 @@
         <div>
           <h5 class="process__title vertText h__white">Our Process</h5>
           <div class="process__content t__white h__white">
-            <div class="process__item hidden">
+            <div class="process__item mark-for-fade-in">
               <img src="~assets/images/icon_proprietarty.svg">
               <h4>
                 01
@@ -85,7 +85,7 @@
               </h4>
               <p>Arturo uses proprietary data to develop differentiated and transparent models</p>
             </div>
-            <div class="process__item hidden">
+            <div class="process__item mark-for-fade-in">
               <img src="~assets/images/icon_models.svg">
               <h4>
                 02
@@ -93,7 +93,7 @@
               </h4>
               <p>These models process the most recent input data available including images, mobile device data, property records, and weather data</p>
             </div>
-            <div class="process__item hidden">
+            <div class="process__item mark-for-fade-in">
               <img src="~assets/images/icon_ui.svg">
               <h4>
                 03
@@ -312,13 +312,13 @@ export default {
 
     const react_to_scroll = function() {
       if (!scenes_created) {
+          initialize_fade_in_elements();
           createScenes();
           scenes_created = true;
       }
       animateHTML();
     }
 
-    initialize_fade_in_elements();
     window.addEventListener('scroll', react_to_scroll, false);
     window.addEventListener('resize', animateHTML, false);
   }

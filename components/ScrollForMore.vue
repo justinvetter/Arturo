@@ -55,6 +55,7 @@
         font-weight: bold;
         transition: opacity .5s ease;
         transform: translateX(-50%);
+        padding-bottom: 1.2vh;
 
         svg {
             fill: $color_teal;

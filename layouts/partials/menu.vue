@@ -49,8 +49,9 @@ export default {
     SocialList
   },
   mounted() {
-    var after_interact = function (e) {
-      console.log('Toggle button clicked');
+    var after_click = function (e) {
+      debugger;
+      console.log('Toggle button click');
       e.preventDefault();
       let c_time = new Date().getTime();
       if (c_time - interaction_debounce <= timestamp) {
@@ -59,7 +60,20 @@ export default {
       timestamp = c_time;
       if (!menu) return;
       menu.classList.toggle("is-open");
-    }
+    };
+
+    var after_touched = function (e) {
+      debugger;
+      console.log('Toggle button touchend');
+      e.preventDefault();
+      let c_time = new Date().getTime();
+      if (c_time - interaction_debounce <= timestamp) {
+        return;
+      }
+      timestamp = c_time;
+      if (!menu) return;
+      menu.classList.toggle("is-open");
+    };
     console.log('Menu mounted');
     var menu, toggleButton, closeButton;
     // Set Elements
@@ -70,8 +84,8 @@ export default {
     timestamp = new Date().getTime();
 
     // Toggle Menu
-    toggleButton.addEventListener("click", after_interact, true);
-    toggleButton.addEventListener("touchend", after_interact, true);
+    toggleButton.addEventListener("click", after_click, true);
+    toggleButton.addEventListener("touchend", after_touched, true);
   },
   watch: {
     $route() {

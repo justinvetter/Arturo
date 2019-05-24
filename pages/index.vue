@@ -131,7 +131,18 @@ export default {
     Hero,
     Counting
   },
-
+  name: 'Arturo',
+  created() {
+    window._paq.push(['setCustomUrl', '/' + window.location.hash.substr(1)]);
+    window._paq.push(['setDocumentTitle', 'Home Page']);
+    window._paq.push(['trackPageView']);
+  },
+  head() {
+    return {
+      title: "Arturo",
+      meta: [{ hid: "description", name: "description", content: "Arturo" }]
+    };
+  },
   mounted() {
     const _this = this;
     // Shows/Hides the "Scroll for more" widget

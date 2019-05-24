@@ -106,6 +106,12 @@ export default {
     ScrollForMore,
     Footer
   },
+  name: 'Our Value | Arturo',
+  created() {
+    window._paq.push(['setCustomUrl', '/' + window.location.hash.substr(1)]);
+    window._paq.push(['setDocumentTitle', 'Our Value Page']);
+    window._paq.push(['trackPageView']);
+  },
   head() {
     return {
       title: "Our Value | Arturo",

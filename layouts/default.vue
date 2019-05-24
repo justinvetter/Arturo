@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div onclick="void(0);" >
     <Menu />
     <nuxt />
   </div>

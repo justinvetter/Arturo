@@ -50,8 +50,6 @@ export default {
   },
   mounted() {
     var after_click = function (e) {
-      debugger;
-      console.log('Toggle button click');
       e.preventDefault();
       let c_time = new Date().getTime();
       if (c_time - interaction_debounce <= timestamp) {
@@ -63,8 +61,6 @@ export default {
     };
 
     var after_touched = function (e) {
-      debugger;
-      console.log('Toggle button touchend');
       e.preventDefault();
       let c_time = new Date().getTime();
       if (c_time - interaction_debounce <= timestamp) {
@@ -74,7 +70,6 @@ export default {
       if (!menu) return;
       menu.classList.toggle("is-open");
     };
-    console.log('Menu mounted');
     var menu, toggleButton, closeButton;
     // Set Elements
     menu = document.getElementById("slideout-menu");

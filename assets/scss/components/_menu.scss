@@ -18,7 +18,8 @@
         left: -750px;
     }
 
-    &.is-open {
+    &.is-open.initialized,
+    &.open:not(.initialized):hover {
         left: 0;
 
         .slideout-toggle {

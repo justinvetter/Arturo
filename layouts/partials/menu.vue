@@ -19,13 +19,15 @@
       </div>
       <div class="menu-click-counter" id="menu_click_counter" ></div>
       <div class="menu-click-counter" id="menu_click_blocked_counter" ></div>
-      <a class="slideout-toggle vertText t__white" href="#" id="slideout-toggle" onclick="after_click()" >
-        <div class="hamburger">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>MENU
-      </a>
+      <div id="slideout_toggle_wrapper" class="slideout-toggle-wrapper" onclick="after_click()" >
+        <a class="slideout-toggle vertText t__white" href="#" id="slideout-toggle" >
+          <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>MENU
+        </a>
+      </div>
       <SocialList class="social" />
     </div>
   </nav>
@@ -97,7 +99,7 @@ export default {
     var menu, toggleButton, closeButton;
     // Set Elements
     menu = document.getElementById("slideout-menu");
-    toggleButton = document.getElementById("slideout-toggle");
+    toggleButton = document.getElementById("slideout_toggle_wrapper");
     closeButton = document.getElementById("slideout-close");
 
     timestamp = new Date().getTime();

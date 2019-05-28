@@ -86,6 +86,10 @@ export default {
     toggleButton = document.getElementById("slideout_toggle_wrapper");
     closeButton = document.getElementById("slideout-close");
 
+    if (menu) {
+      menu.classList.add('initialized');
+    }
+
     timestamp = new Date().getTime();
 
     // Toggle Menu

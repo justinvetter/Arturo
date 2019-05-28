@@ -59,7 +59,10 @@ export default {
         return;
       }
       timestamp = c_time;
-      if (!menu) return;
+      if (!menu) {
+        menu = document.getElementById("slideout-menu");
+      }
+      if (!menu) { return };
       menu.classList.toggle("is-open");
     };
 
@@ -70,7 +73,10 @@ export default {
         return;
       }
       timestamp = c_time;
-      if (!menu) return;
+      if (!menu) {
+        menu = document.getElementById("slideout-menu");
+      }
+      if (!menu) { return };
       menu.classList.toggle("is-open");
     };
 

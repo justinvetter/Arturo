@@ -30,7 +30,7 @@
               02
               <span>/03</span>
             </h4>
-            <h4>Understanding activity patterns to better understand risk</h4>
+            <h4>Understanding activity patterns to better determine risk</h4>
           </div>
         </div>
       </article>

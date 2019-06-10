@@ -23,7 +23,7 @@
             <h4>02
               <span>/03</span>
             </h4>
-            <h4>Full-loop™ deep learning</h4>
+            <h4>Full-loop deep learning™</h4>
             <p>Our proprietary deep learning methodology doesn’t end with a model’s output, but harnesses feedback loops to automatically improve quality and performance over time.</p>
           </div>
         </div>
@@ -68,7 +68,7 @@
             <h4>02
               <span>/03</span>
             </h4>
-            <h4>Full-loop™ deep learning</h4>
+            <h4>Full-loop deep learning™</h4>
             <p>Our proprietary deep learning methodology doesn’t end with a model’s output, but harnesses feedback loops to automatically improve quality and performance over time.</p>
           </div>
         </div>

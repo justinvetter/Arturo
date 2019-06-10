@@ -58,7 +58,7 @@
             <h4>Pre-Fill / Quotation</h4>
             <p>
               "Access to quality data is integral to how we quantify risk at Openly. Arturo’s approach, layering sophisticated machine learning on top of high resolution imagery, is a key part of how we gain a deeper understanding of a specific property, and are ultimately able to offer an accurate and competitive rate."
-              <span>—Matt Weilbut // CTO // Openly</span>
+              <span>—Matt Wielbut // CTO // Openly</span>
             </p>
             <!-- <a class="button button__white button__white-ltBlue" href="#">/Link</a> -->
           </div>

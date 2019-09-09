@@ -4,13 +4,26 @@
       <img src="~assets/images/arturo_white_logo.svg">
       <div class="h__white subhead">
         <h1>Enables understanding of the physical world</h1>
+        <div>
+          <a class="button" v-on:click="show">Request a demo</a>
+        </div>
       </div>
     </div>
   </section>
 </template>
 
 <script>
-export default {};
+import Modal from "@/components/Modal";
+export default {
+    components: {
+        Modal
+    },
+    methods: {
+        show() {
+            this.$modal.show("demo");
+        }
+    }
+};
 </script>
 
 <style lang="scss" scoped>
@@ -40,6 +53,17 @@ export default {};
 
         .subhead {
             max-width: em(648);
+            display: flex;
+            flex-direction: column;
+            div{
+              display: flex;
+              a.button {
+                margin-top: 2.5em;
+                margin-left: auto;
+                border-color: $color_teal;
+                color: $color_teal;
+              }
+            }
         }
     }
     @media (max-width: 1145px) {

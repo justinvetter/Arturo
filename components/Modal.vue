@@ -107,6 +107,8 @@ export default {
 .v--modal {
   background-color: $color_darkBlue !important;
   padding: 3rem !important;
+  max-height: 100vh;
+  overflow-y: auto !important;
   h4 {
     text-align: center;
     color: $color_lightBlue;

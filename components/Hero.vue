@@ -35,6 +35,7 @@ export default {
     background-repeat: no-repeat;
     background-color: $color_blue;
     height: 75vh;
+    min-height: 400px;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -87,6 +88,7 @@ export default {
         min-height: 50vh;
         &__content{
             padding: 0 3em;
+            padding-top: 2em; // to clear the nav bar
             img{
                 width: 100%;
                 height: auto;

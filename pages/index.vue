@@ -328,6 +328,7 @@ export default {
 <style lang="scss" scoped>
 .hero {
   height: 75vh;
+  min-height: 470px;
 }
 .counting {
   /*height: 25vh;*/

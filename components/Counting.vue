@@ -12,8 +12,6 @@
 <script>
 export default {
     mounted() {
-      const canv = document.createElement('canvas');
-      const ctx = canv.getContext('2d');
       const container = document.getElementById('countUpWrapper');
       const initial_font_size = 14.5; // vh
       const size_tolerance_min = 0.2;
@@ -42,60 +40,10 @@ export default {
             }
             if (!counter_refresh_step) {
               animateValue("countUpWrapper", 0, current_count, count_up_duration);
-            } else {
-              fitTextToContainer(format_number(current_count));
             }
             counter_refresh_step++;
           }
         };
-      }
-
-      function fitTextToContainer(str) {
-        if (str.length === previous_length) {
-          return;
-        }
-        if (!str) {
-          str = final_text;
-        } else {
-          final_text = str;
-        }
-        if (!str) {
-          str = '';
-        }
-        previous_length = str.length;
-        
-        ctx.font = `${initial_font_size}vh "Gotham", Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif`;
-        let size = ctx.measureText(str).width;
-        let perc = initial_font_size;
-        let tolerance_min = container.getBoundingClientRect().width * (1 - size_tolerance_min);
-        let tolerance_max = container.getBoundingClientRect().width * (1 - size_tolerance_max);
-        if (size < tolerance_max) {
-          container.style.fontSize = `${initial_font_size}vh`;
-          return;
-        }
-        let sm_perc = null;
-        let lg_perc = parseInt(String(initial_font_size));
-        let max_steps = 25;
-        let step = -1;
-        while (size < tolerance_min || size > tolerance_max) {
-          step++;
-          if (step >= max_steps) {
-            break;
-          }
-          if (size < tolerance_min) {
-            sm_perc = perc;
-          } else {
-            lg_perc = perc;
-          }
-          if (sm_perc === null) {
-            perc = lg_perc / 10;
-          } else {
-            perc = (lg_perc + sm_perc) / 2;
-          }
-          ctx.font = `${perc}vh "Gotham", Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif`;
-          size = ctx.measureText(str).width;
-        }
-        container.style.fontSize = `${perc}vh`;
       }
 
       function format_number(num) {
@@ -132,7 +80,6 @@ export default {
           var remaining = Math.max((endTime - now) / duration, 0);
           var value = Math.round(end - remaining * range);
           obj.innerText = format_number(value);
-          fitTextToContainer(obj.innerText);
           if (value == end) {
             clearInterval(timer);
           }
@@ -143,7 +90,6 @@ export default {
       }
       getCount();
       setInterval(getCount, refresh_interval);
-      window.addEventListener('resize', fitTextToContainer, false);
     }
 }
 </script>
@@ -193,6 +139,7 @@ export default {
       #countUpWrapper {
         color: $color_blue;
         font-weight: bold;
+        font-size: em(12);
         line-height: 1;
         width: 100%;
         height: 100%;
@@ -231,6 +178,10 @@ export default {
           padding-left: 0;
           padding-top: 2.5vh;
           font-size: em(100);
+        }
+
+        #countUpWrapper {
+          font-size: em(10);
         }
       }
     }

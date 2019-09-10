@@ -35,7 +35,7 @@ export default {
     background-repeat: no-repeat;
     background-color: $color_blue;
     height: 75vh;
-    min-height: 400px;
+    min-height: 470px;
     width: 100%;
     display: flex;
     justify-content: center;

@@ -35,10 +35,6 @@
                 fill: $color_white;
             }
 
-            &:first-child {
-                padding: 0 2rem 0 0;
-            }
-
             &:last-child {
                 border-right: none;
             }
@@ -114,6 +110,11 @@
             svg {
                 transform: scale(.5, .5)
             }
+        }
+    }
+    @media screen and (max-width: 320px){
+        article{
+          width: 100%
         }
     }
 }

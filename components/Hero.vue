@@ -85,7 +85,6 @@ export default {
 
     @media (max-width: 745px) {
         height: 50vh;
-        min-height: 50vh;
         &__content{
             padding: 0 3em;
             padding-top: 2em; // to clear the nav bar

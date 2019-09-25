@@ -30,7 +30,7 @@
             <br>Chicago IL 60654
             <br>312-535-3006
             <br>
-            <a href="mailto:info@arturo.com">info@arturo.com</a>
+            <a href="mailto:info@arturo.ai">info@arturo.ai</a>
           </div>
         </div>
         <div class="bottom-center">©2019 Arturo inc.</div>

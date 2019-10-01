@@ -21,6 +21,7 @@
             <h4>Our story</h4>
             <p>Arturo products represents a 3+ year investment and Research and Development inside American Family Insurance.</p>
             <p>We’re passionate about eliminating the complexity of extracting insights from ensemble data sets and specialize in being able to deliver accurate predictions in formats that are immediately useful inside our customer’s business systems.</p>
+            <p>Arturo is headquartered in Chicago, IL and has representation across North America to support both the Insurance and Re-Insurance Industry. Arturo has recently added to its locations a presence in Ottawa, Canada.</p>
           </div>
         </div>
       </article>
@@ -230,10 +231,16 @@ export default {
   background-image: url("~assets/images/img_hero_aboutus_v2.png");
 }
 .cards {
+  min-height: 80vh; // min height because "about us" card has overflowed before
   .image {
     background-image: url("~assets/images/img_hero_aboutus.png");
     background-size: contain;
     background-repeat: no-repeat;
+  }
+}
+.card__content{
+  h4{
+    padding-top: 2rem;
   }
 }
 

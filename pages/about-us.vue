@@ -13,7 +13,7 @@
       </article>
     </section>
     <section class="cards cards__right fullHeight">
-      <div class="image" style></div>
+      <div class="image about-image" style></div>
       <article class="card card__dkBlue">
         <div>
           <h5 class="card__title vertText h__white">About Us</h5>
@@ -153,21 +153,21 @@
         </div>
       </div>
     </section>
-    <section class="bgImage about bgImage-about fullHeight">
-      <div class="background careers"></div>
-      <article class="ltBlue">
+    <section class="cards cards__right fullHeight">
+      <article class="card card__ltBlue justify-left">
         <div>
-          <h5 class="bgImage__title vertText h__white">About Us</h5>
-          <div class="bgImage__content h__white">
+          <h5 class="card__title vertText h__white">About Us</h5>
+          <div class="card__content h__white">
             <h4>Careers</h4>
             <p class="careers-message" >We are growing rapidly and looking for talented, passionate, and driven individuals to join our diverse team. Are you passionate about Applied Machine Learning? Data Science? an Engineer who loves building highly scalable and efficient systems on AWS?</p>
             <!--<p class="careers-message" >We are currently hiring <a class="job-posting" href="/softwareEngineerApril2019.pdf" >Software Engineers</a> and <a class="job-posting" href="/frontEndDeveloperApril2019.pdf" >Front-end Developers.</a></p>-->
             <p>
               Email us at
-              <a class="dkBlue careers-link" href="mailto:careers@arturo.ai">careers@arturo.ai</a>.
+              <a class="ltBlue careers-link" href="mailto:careers@arturo.ai">careers@arturo.ai</a>.
             </p>
           </div>
         </div>
+        <div class="image careers-image" style></div>
       </article>
     </section>
     <Footer/>
@@ -231,14 +231,30 @@ export default {
   background-image: url("~assets/images/img_hero_aboutus_v2.png");
 }
 .cards {
-  min-height: 80vh; // min height because "about us" card has overflowed before
-  .image {
-    background-image: url("~assets/images/img_hero_aboutus.png");
-    background-size: contain;
+  .justify-left{
+    justify-content: flex-start;
+  }
+  .card{
+    min-height: 80vh; // min height because "about us" card has overflowed before
+    height: auto;
+  }
+  .image{
     background-repeat: no-repeat;
   }
+  .careers-image{
+    top: 0;
+    bottom: 0;
+    margin:auto;
+    left: 50%;
+    background-image: url("~assets/images/img_aboutus_careers.jpg");
+  }
+  .about-image {
+    background-image: url("~assets/images/img_hero_aboutus.png");
+    background-size: contain;
+  }
 }
-.card__content{
+.card__content,
+.bgImage__content{
   h4{
     padding-top: 2rem;
   }
@@ -252,6 +268,10 @@ export default {
 }
 
 .bgImage-about {
+  article{
+    min-height: 60vh;
+    height: auto;
+  }
   @media (max-width: 868px) {
     article{
       padding: 0 2rem 0 8rem;

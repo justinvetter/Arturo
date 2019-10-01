@@ -64,6 +64,24 @@
             >Visit LinkedIn</a>
           </p>
         </div>
+
+        <div class="leader">
+          <div class="image">
+            <img src="~assets//images/img_square_neil.jpg" class="hidden sm-img">
+          </div>
+          <div class="leader__info h__white t__white">
+            <h3>Neil Pearson</h3>
+            <p>CSO</p>
+          </div>
+          <p class="leader__bio">
+            Former Vice President of Data Strategy and Innovation at CoreLogic. 10+ years in product development thought leadership across the geospatial and imagery analytics space. Urban Planner at heart.
+            <a
+              class="button button__teal button__spacer"
+              target="_blank"
+              href="https://www.linkedin.com/neil-pearson-26137b3"
+            >Visit LinkedIn</a>
+          </p>
+        </div>
       </div>
 
       <div class="people">

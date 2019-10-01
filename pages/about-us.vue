@@ -79,7 +79,7 @@
             <a
               class="button button__teal button__spacer"
               target="_blank"
-              href="https://www.linkedin.com/neil-pearson-26137b3"
+              href="https://www.linkedin.com/in/neil-pearson-26137b3"
             >Visit LinkedIn</a>
           </p>
         </div>

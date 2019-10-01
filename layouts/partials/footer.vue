@@ -20,25 +20,35 @@
     <div class="footer__bottom">
       <div class="bottom-content t__white">
         <div class="bottom-left">
-          <a href="/"></a>
-          <nuxt-link to="/">
-            <ArturoLogo/>
-          </nuxt-link>
+          <div>
+            <a href="/"></a>
+            <nuxt-link to="/">
+              <ArturoLogo/>
+            </nuxt-link>
+          </div>
           <div class="address">
             350 North Orleans Street
             <br>Suite 8000N
             <br>Chicago IL 60654
+            <br>USA
+          </div>
+          <div class="address secondary_address">
+            245 Powell Ave
+            <br>Ottawa, ON K1S 2A4
+            <br>Canada
+          </div>
+          <div class="address secondary_address">
             <br>312-535-3006
             <br>
             <a href="mailto:info@arturo.ai">info@arturo.ai</a>
           </div>
         </div>
-        <div class="bottom-center">©2019 Arturo inc.</div>
         <div class="bottom-right">
           <SocialList class="social"/>
           <nuxt-link to="/">Home</nuxt-link>//<nuxt-link to="/about-us">About Us</nuxt-link>//<nuxt-link to="/our-value">Our Value</nuxt-link>
         </div>
       </div>
+      <div class="footer__copyright t__white">©2019 Arturo inc.</div>
     </div>
     <Modal/>
   </footer>

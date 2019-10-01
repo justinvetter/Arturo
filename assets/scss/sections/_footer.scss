@@ -83,13 +83,17 @@ footer {
         background-color: $color_darkBlue;
         Width: 100%;
         display: flex;
+        flex-direction: column;
         justify-content: center;
         padding-bottom: 6rem;
         margin-top: 8em;
 
         .bottom-content {
             width: 85%;
+            margin-left: auto;
+            margin-right: auto;
             display: flex;
+            flex-direction: row;
             justify-content: space-between;
             align-items: flex-end;
 
@@ -108,11 +112,12 @@ footer {
                     line-height: 1.5;
                     border-left: 2px solid $color_white;
                     padding-left: 2rem;
+                    min-height: 6rem;
                 }
-            }
-
-            .bottom-center {
-                font-size: em(12px);
+                .secondary_address{
+                    margin-left: 2rem;
+                    margin-bottom: auto;
+                }
             }
 
             .bottom-right {
@@ -147,6 +152,13 @@ footer {
                     }
                 }
             }
+        }
+
+        .footer__copyright {
+          margin-left: auto;
+          margin-right: auto;
+          margin-top: 1.5rem;
+          font-size: em(12px);
         }
     }
 

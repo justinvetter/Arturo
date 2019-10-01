@@ -229,6 +229,31 @@ footer {
 
         .footer__bottom {
             .bottom-content {
+                .logo-holder{
+                  display:flex;
+                  a.nuxt-link-active{
+                    margin-left: auto;
+                    margin-right: auto;
+                  }
+                }
+                .bottom-left{
+                  flex-direction: column;
+                  align-items: unset;
+                  .address, .secondary_address{
+                    min-height: auto;
+                    padding-left: 0;
+                    margin-left: 0;
+                    padding-bottom: .5rem;
+                    padding-top: .5rem;
+                    border-left: none;
+                    border-bottom: 2px solid #fff;
+                  }
+                  svg{
+                    padding-right: 0;
+                    margin-right: auto;
+                    margin-left: auto;
+                  }
+                }
                 .bottom-right {
                     display: none;
                 }

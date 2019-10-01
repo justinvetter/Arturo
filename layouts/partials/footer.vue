@@ -20,7 +20,7 @@
     <div class="footer__bottom">
       <div class="bottom-content t__white">
         <div class="bottom-left">
-          <div>
+          <div class="logo-holder">
             <a href="/"></a>
             <nuxt-link to="/">
               <ArturoLogo/>
@@ -38,7 +38,7 @@
             <br>Canada
           </div>
           <div class="address secondary_address">
-            <br>312-535-3006
+            312-535-3006
             <br>
             <a href="mailto:info@arturo.ai">info@arturo.ai</a>
           </div>

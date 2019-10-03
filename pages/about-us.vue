@@ -40,6 +40,7 @@
           </div>
           <p class="leader__bio">
             Former Head of Commercial Product at DigitalGlobe. 10+ years startup background in geospatial and location-based analytics. Recovering software engineer.
+            <br>
             <a
               class="button button__teal button__spacer"
               target="_blank"
@@ -58,6 +59,7 @@
           </div>
           <p class="leader__bio">
             Former Head of Product for National Geospatial Intelligence Agency (NGA) GEOINT Services. 10+ years remote sensing, computer vision, and machine learning. Geographer.
+            <br>
             <a
               class="button button__teal button__spacer"
               target="_blank"
@@ -76,6 +78,7 @@
           </div>
           <p class="leader__bio">
             Former Vice President of Data Strategy and Innovation at CoreLogic. 10+ years in product development thought leadership across the geospatial and imagery analytics space. Urban Planner at heart.
+            <br>
             <a
               class="button button__teal button__spacer"
               target="_blank"

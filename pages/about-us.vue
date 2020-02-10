@@ -165,7 +165,9 @@
             <p class="careers-message" >We are growing rapidly and looking for talented, passionate, and driven individuals to join our diverse team. Are you passionate about Applied Machine Learning? Data Science? an Engineer who loves building highly scalable and efficient systems on AWS?</p>
             <!--<p class="careers-message" >We are currently hiring <a class="job-posting" href="/softwareEngineerApril2019.pdf" >Software Engineers</a> and <a class="job-posting" href="/frontEndDeveloperApril2019.pdf" >Front-end Developers.</a></p>-->
             <p>
-              Email us at
+              See positions we're currently hiring for at  
+              <a class="ltBlue careers-link" href="https://jobs.arturo.ai/">jobs.arturo.ai</a>.
+              or contact us at 
               <a class="ltBlue careers-link" href="mailto:careers@arturo.ai">careers@arturo.ai</a>.
             </p>
           </div>
@@ -358,7 +360,7 @@ p.careers-message {
   border-bottom: 1px solid white;
 }
 .careers-link {
-  text-decoration: none;
+  text-decoration: underline;
   color: inherit;
 }
 </style>

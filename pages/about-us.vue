@@ -163,7 +163,6 @@
           <div class="card__content h__white">
             <h4>Careers</h4>
             <p class="careers-message" >We are growing rapidly and looking for talented, passionate, and driven individuals to join our diverse team. Are you passionate about Applied Machine Learning? Data Science? an Engineer who loves building highly scalable and efficient systems on AWS?</p>
-            <!--<p class="careers-message" >We are currently hiring <a class="job-posting" href="/softwareEngineerApril2019.pdf" >Software Engineers</a> and <a class="job-posting" href="/frontEndDeveloperApril2019.pdf" >Front-end Developers.</a></p>-->
             <p>
               See positions we're currently hiring for at  
               <a class="ltBlue careers-link" href="https://jobs.arturo.ai/">jobs.arturo.ai</a>.

@@ -167,8 +167,6 @@
             <p>
               See positions we're currently hiring for at  
               <a class="ltBlue careers-link" href="https://jobs.arturo.ai/">jobs.arturo.ai</a>.
-              or contact us at 
-              <a class="ltBlue careers-link" href="mailto:careers@arturo.ai">careers@arturo.ai</a>.
             </p>
           </div>
         </div>
